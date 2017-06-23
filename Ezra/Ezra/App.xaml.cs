@@ -12,13 +12,15 @@ namespace Ezra
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("NavigationPage/MainPage?title=Hello%20from%20Xamarin.Forms");
+            //NavigationService.NavigateAsync("EzraNavigationPage/MainPage?title=Hello%20from%20Xamarin.Forms");
+            MainPage = new EzraNavigationPage(new MainPage());
         }
 
         protected override void RegisterTypes()
         {
-            Container.RegisterTypeForNavigation<NavigationPage>();
+            /*Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<EzraNavigationPage>();*/
         }
     }
 }

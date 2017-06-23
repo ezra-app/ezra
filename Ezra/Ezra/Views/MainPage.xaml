@@ -3,9 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
              x:Class="Ezra.Views.MainPage"
-             Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
-  </StackLayout>
+             Title="Junho 2017">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adcionar" Icon="play.png"/>
+        <ToolbarItem Text="Adcionar" Icon="add.png"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <TableView HasUnevenRows="true">
+            <TableRoot>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 12">
+                            <Image Source="clock.png" HeightRequest="30" Margin="0, 0, 10, 0"/>
+                            <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="12:00" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell >
+                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 12">
+                            <Image Source="book2.png" HeightRequest="30" Margin="0, 0, 10, 0"></Image>
+                            <Label Text="Publicações:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="12" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 12">
+                            <Image Source="video.png" HeightRequest="30" Margin="0, 0, 10, 0"></Image>
+                            <Label Text="Vídeos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="2" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 12">
+                            <Image Source="bookmark.png" HeightRequest="30" Margin="0, 0, 10, 0"></Image>
+                            <Label Text="Revisitas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="4" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 5">
+                            <Image Source="university.png" HeightRequest="30" Margin="0, 0, 10, 0"></Image>
+                            <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection>
+                    <ViewCell>
+                        <StackLayout Margin="0, 0, 0, 0">
+                            <StackLayout BackgroundColor="#187288" Padding="15, 15, 15, 15">
+                                <Label Text="Minhas Metas" FontSize="Medium" TextColor="White"/>
+                            </StackLayout>
+                            <StackLayout Margin="10, 0, 10, 10">
+                                <Label Text="Minha Meta é 12 hrs" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="Preciso de 12:00 hrs por dia" FontSize="Medium"  HorizontalOptions="StartAndExpand"/>
+                                <Label Text="Faltam 12:00 para acabar" FontSize="Medium"  HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
 </ContentPage>

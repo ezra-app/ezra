@@ -20,9 +20,13 @@ namespace Ezra.Droid
             ToolbarResource = Resource.Layout.toolbar;
 
             base.OnCreate(bundle);
-
+            FormsPlugin.Iconize.Droid.IconControls.Init(Resource.Id.toolbar);
+            Plugin.Iconize.Iconize
+                      .With(new Plugin.Iconize.Fonts.IoniconsModule());
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(200, 19, 91, 108));
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
+            
         }
     }
 
