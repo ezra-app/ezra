@@ -108,16 +108,8 @@
     <None Include="Ezra.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\add.png" />
-    <Content Include="Assets\book.png" />
-    <Content Include="Assets\book2.png" />
-    <Content Include="Assets\bookmark.png" />
-    <Content Include="Assets\clock.png" />
-    <Content Include="Assets\cloud.png" />
-    <Content Include="Assets\play.png" />
-    <Content Include="Assets\revistas.png" />
-    <Content Include="Assets\university.png" />
-    <Content Include="Assets\video.png" />
+    <Content Include="add.png" />
+    <Content Include="play.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

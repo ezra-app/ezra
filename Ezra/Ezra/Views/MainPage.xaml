@@ -17,46 +17,32 @@
             <TableRoot>
                 <TableSection>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 12">
-                            <Image Source="clock.png" HeightRequest="30" Margin="0, 0, 10, 0"/>
-                            <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                            <Label Text="12:00" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-                <TableSection>
-                    <ViewCell >
-                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 12">
-                            <Image Source="book2.png" HeightRequest="30" Margin="0, 0, 10, 0"></Image>
-                            <Label Text="Publicações:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                            <Label Text="12" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-                <TableSection>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 12">
-                            <Image Source="video.png" HeightRequest="30" Margin="0, 0, 10, 0"></Image>
-                            <Label Text="Vídeos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                            <Label Text="2" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-                <TableSection>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 12">
-                            <Image Source="bookmark.png" HeightRequest="30" Margin="0, 0, 10, 0"></Image>
-                            <Label Text="Revisitas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                            <Label Text="4" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-                <TableSection>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Margin="10, 12, 15, 5">
-                            <Image Source="university.png" HeightRequest="30" Margin="0, 0, 10, 0"></Image>
-                            <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                            <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
+                                <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
+                                <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="12:00" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
+                                <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
+                                <Label Text="Publicações:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="12" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
+                                <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
+                                <Label Text="Vídeos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="2" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
+                                <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
+                                <Label Text="Revisitas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="4" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 12">
+                                <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
+                                <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
                         </StackLayout>
                     </ViewCell>
                 </TableSection>
