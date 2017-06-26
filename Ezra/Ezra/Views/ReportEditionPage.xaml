@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Ezra.Views.ReportEditionPage" Title="Adicionar Relatório">
+
+    <StackLayout Margin="15, 12, 15, 2">
+        <StackLayout Orientation="Horizontal">
+            <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
+            <Entry Placeholder="Horas" HorizontalOptions="FillAndExpand"/>
+            <Entry Placeholder="Minutos" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout  Orientation="Horizontal">
+            <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
+            <Entry Placeholder="Publicações"  HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout  Orientation="Horizontal">
+            <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
+            <Entry Placeholder="Vídeos"  HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout  Orientation="Horizontal">
+            <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
+            <Entry Placeholder="Revisitas"  HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout  Orientation="Horizontal">
+            <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
+            <Entry Placeholder="Estudos" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+
+    </StackLayout>
+  
+</ContentPage>

@@ -46,7 +46,7 @@ namespace Ezra.UWP
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-            //Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.IoniconsModule());
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.IoniconsModule());
 
             Frame rootFrame = Window.Current.Content as Frame;
 
