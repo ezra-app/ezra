@@ -9,30 +9,31 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Icon="checkmark.png" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
-    
-    <StackLayout Margin="15, 12, 15, 2">
-        <StackLayout Orientation="Horizontal">
-            <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
-            <Entry Placeholder="Horas" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
-            <Entry Placeholder="Minutos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
-        </StackLayout>
-        <StackLayout  Orientation="Horizontal">
-            <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
-            <Entry Placeholder="Publicações"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
-        </StackLayout>
-        <StackLayout  Orientation="Horizontal">
-            <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
-            <Entry Placeholder="Vídeos"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
-        </StackLayout>
-        <StackLayout  Orientation="Horizontal">
-            <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
-            <Entry Placeholder="Revisitas"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
-        </StackLayout>
-        <StackLayout  Orientation="Horizontal">
-            <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
-            <Entry Placeholder="Estudos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
-        </StackLayout>
 
-    </StackLayout>
-  
+    <ScrollView>
+        <StackLayout Margin="15, 12, 15, 2">
+            <StackLayout Orientation="Horizontal">
+                <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
+                <Entry Placeholder="Horas" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                <Entry Placeholder="Minutos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal">
+                <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
+                <Entry Placeholder="Publicações"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal">
+                <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
+                <Entry Placeholder="Vídeos"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal">
+                <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
+                <Entry Placeholder="Revisitas"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal">
+                <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
+                <Entry Placeholder="Estudos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
