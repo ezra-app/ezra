@@ -91,6 +91,8 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Content Include="Assets\Fonts\iconize-ionicons.ttf" />
+    <Content Include="calendar.png" />
+    <Content Include="checkmark.png" />
     <Content Include="iconize-ionicons.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -113,7 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="add.png" />
-    <AndroidResource Include="pause.png" />
+    <Content Include="pause.png" />
     <Content Include="play.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

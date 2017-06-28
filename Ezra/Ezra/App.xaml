@@ -3,5 +3,17 @@
                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
                         x:Class="Ezra.App">
+  <ResourceDictionary>
+    <!-- DEFINE ANY CONSTANTS -->
+    <Color x:Key="SeparatorLineColor">#CCCCCC</Color>
+    <Color x:Key="iOSDefaultTintColor">#007aff</Color>
+    <Color x:Key="AndroidPrimaryColorColor">#187288</Color>
+    <OnPlatform
+                x:TypeArguments="Color"
+                x:Key="colorPrimary"
+                Android="{ StaticResource AndroidPrimaryColorColor }"
+                iOS="{ StaticResource iOSDefaultTintColor }"
+            />
+  </ResourceDictionary>
 
 </prism:PrismApplication>

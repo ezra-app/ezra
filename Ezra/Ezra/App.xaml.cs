@@ -15,9 +15,8 @@ namespace Ezra
             InitializeComponent();
             
             //NavigationService.NavigateAsync("EzraNavigationPage/MainPage?title=Hello%20from%20Xamarin.Forms");
-            //NavigationService.NavigateAsync("MainMasterDetailPage");
-            MainPage = new MainMasterDetailPage();
-            MainPage.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Top);
+            NavigationService.NavigateAsync("MainMasterDetailPage");
+            //MainPage = new MainMasterDetailPage();
 
         }
 

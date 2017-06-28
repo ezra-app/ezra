@@ -8,6 +8,7 @@
              Title="Junho 2017">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Data" Icon="calendar.png"/>
         <ToolbarItem Text="Iniciar" Icon="{Binding CounterIconName}" Command="{Binding StartCounterCommand}"/>
         <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}"/>
     </ContentPage.ToolbarItems>
@@ -16,92 +17,46 @@
         <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
                 <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                <Label Text="12:00" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                <Label Text="12:00" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
                 <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Publicações:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                <Label Text="12" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                <Label Text="Publicações:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                <Label Text="12" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
                 <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Vídeos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                <Label Text="2" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                <Label Text="Vídeos:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                <Label Text="2" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
                 <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Revisitas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                <Label Text="4" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                <Label Text="Revisitas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                <Label Text="4" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 12">
+            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 0">
                 <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
+                <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-left" HorizontalOptions="Start" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 15, 0"/>
+                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-right" HorizontalOptions="Start" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 15, 0"/>
+                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-ios-list" HorizontalOptions="EndAndExpand" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 0, 0"/>
+            </StackLayout>
+
             <StackLayout Margin="0, 0, 0, 0">
-                <StackLayout BackgroundColor="#187288" Padding="15, 15, 15, 15">
+                <StackLayout BackgroundColor="#187288" Padding="15, 15, 15, 15" Orientation="Horizontal">
+                    <iconize:IconLabel FontSize="27" Text="ion-ios-pulse-strong" TextColor="#fa7843" Margin="0, 0, 15, 0"/>
                     <Label Text="Minhas Metas" FontSize="Medium" TextColor="White"/>
                 </StackLayout>
                 <StackLayout Margin="10, 0, 10, 10">
-                    <Label Text="Minha Meta é 12 hrs" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                    <Label Text="Preciso de 12:00 hrs por dia" FontSize="Medium"  HorizontalOptions="StartAndExpand"/>
-                    <Label Text="Faltam 12:00 para acabar" FontSize="Medium"  HorizontalOptions="StartAndExpand"/>
+                    <Label Text="Minha Meta é 12 hrs" FontSize="Medium" HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
+                    <Label Text="Preciso de 12:00 hrs por dia" FontSize="Medium"  HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
+                    <Label Text="Faltam 12:00 para acabar" FontSize="Medium"  HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>
     </ScrollView>
-
-    <!--
-    <StackLayout>
-        <TableView HasUnevenRows="true">
-            <TableRoot>
-                <TableSection>
-                    <ViewCell>
-                        <StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
-                                <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
-                                <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                                <Label Text="12:00" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
-                                <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
-                                <Label Text="Publicações:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                                <Label Text="12" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
-                                <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
-                                <Label Text="Vídeos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                                <Label Text="2" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
-                                <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
-                                <Label Text="Revisitas:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                                <Label Text="4" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 12">
-                                <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
-                                <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                                <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-                <TableSection>
-                    <ViewCell>
-                        <StackLayout Margin="0, 0, 0, 0">
-                            <StackLayout BackgroundColor="#187288" Padding="15, 15, 15, 15">
-                                <Label Text="Minhas Metas" FontSize="Medium" TextColor="White"/>
-                            </StackLayout>
-                            <StackLayout Margin="10, 0, 10, 10">
-                                <Label Text="Minha Meta é 12 hrs" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
-                                <Label Text="Preciso de 12:00 hrs por dia" FontSize="Medium"  HorizontalOptions="StartAndExpand"/>
-                                <Label Text="Faltam 12:00 para acabar" FontSize="Medium"  HorizontalOptions="StartAndExpand"/>
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </TableSection>
-            </TableRoot>
-        </TableView>
-    </StackLayout>-->
 </ContentPage>
