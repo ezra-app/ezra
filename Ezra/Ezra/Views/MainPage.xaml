@@ -40,7 +40,7 @@
                 <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
                 <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Margin="5, 0, 5, 0">
                 <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-left" HorizontalOptions="Start" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 15, 0"/>
                 <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-right" HorizontalOptions="Start" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 15, 0"/>
                 <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-ios-list" HorizontalOptions="EndAndExpand" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 0, 0"/>
