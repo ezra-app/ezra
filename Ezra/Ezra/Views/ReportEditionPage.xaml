@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Ezra.Views.ReportEditionPage" Title="Adicionar Relatório">
 
@@ -12,6 +13,25 @@
 
     <ScrollView>
         <StackLayout Margin="15, 12, 15, 2">
+            <StackLayout>
+                <DatePicker Date="{x:Static sys:DateTime.Now}">
+                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                    <DatePicker.MinimumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 2000</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Dec 31 2050</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>
+                </DatePicker>
+            </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
                 <Entry Placeholder="Horas" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>

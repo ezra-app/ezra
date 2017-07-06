@@ -27,15 +27,42 @@ namespace Ezra.ViewModels
         }
 
         public bool counterStarted = false;
+        public bool CounterStarted
+        {
+            get { return counterStarted; }
+            set { SetProperty(ref counterStarted, value); }
+        }
         public ICommand StartCounterCommand { get; set; }
         public ICommand AddCommand { get; set; }
-
+        public ICommand ReportListCommand { get; set; }
+        public ICommand DatePickerCommand { get; set; }
+        
         public MainPageViewModel(INavigationService navigationService)
         {
             NavigationService = navigationService;
             HandleCounterIcon();
             StartCounterCommand = new Command(StartCounterCommandExecute);
             AddCommand = new Command(AddCommandExecute);
+            ReportListCommand = new Command(ReportListCommandExecute);
+            DatePickerCommand = new Command(DatePickerCommandExecute);
+        }
+
+        private void DatePickerCommandExecute(object obj)
+        {
+            DatePicker datePicker = new DatePicker
+            {
+                Format = "D",
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                IsVisible = false,
+                IsEnabled = true,
+            };
+            datePicker.IsEnabled = true;
+            datePicker.Focus();
+        }
+
+        public void ReportListCommandExecute()
+        {
+            NavigationService.NavigateAsync("ReportListPage");
         }
 
         private void AddCommandExecute(object obj)
@@ -45,12 +72,13 @@ namespace Ezra.ViewModels
 
         private void StartCounterCommandExecute(object obj)
         {
+            CounterStarted = !CounterStarted;
             HandleCounterIcon();
         }
 
         private void HandleCounterIcon()
         {
-            if (counterStarted)
+            if (CounterStarted)
             {
                 CounterIconName = "pause.png";
             }
@@ -58,8 +86,6 @@ namespace Ezra.ViewModels
             {
                 CounterIconName = "play.png";
             }
-
-            counterStarted = !counterStarted;
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

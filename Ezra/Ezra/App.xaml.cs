@@ -27,6 +27,7 @@ namespace Ezra
             Container.RegisterTypeForNavigation<EzraNavigationPage>();
             Container.RegisterTypeForNavigation<MainMasterDetailPage>();
             Container.RegisterTypeForNavigation<ReportEditionPage>();
+            Container.RegisterTypeForNavigation<ReportListPage>();
         }
     }
 }

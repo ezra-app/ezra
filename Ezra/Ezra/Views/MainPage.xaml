@@ -4,48 +4,64 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="Ezra.Views.MainPage"
              Title="Junho 2017">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Data" Icon="calendar.png"/>
+        <ToolbarItem Text="Data" Icon="calendar.png" Clicked="OnDatePickerClicked"/>
         <ToolbarItem Text="Iniciar" Icon="{Binding CounterIconName}" Command="{Binding StartCounterCommand}"/>
         <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
         <StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
-                <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
-                <Label Text="12:00" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
-                <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Publicações:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
-                <Label Text="12" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
-                <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Vídeos:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
-                <Label Text="2" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
-                <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Revisitas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
-                <Label Text="4" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 0">
-                <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
-                <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
+            <StackLayout x:Name="reportStackLayout">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </StackLayout.GestureRecognizers>
+                <StackLayout BackgroundColor="Transparent">
+                    <DatePicker x:Name="myDatePicker" Date="{x:Static sys:DateTime.Now}" IsVisible="False" IsEnabled="False" DateSelected="OnDatePickerSelected">
+                        <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                    </DatePicker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
+                    <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                    <Label Text="12:00" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
+                    <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Label Text="Publicações:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                    <Label Text="12" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
+                    <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Label Text="Vídeos:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                    <Label Text="2" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
+                    <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Label Text="Revisitas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                    <Label Text="4" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 0">
+                    <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Label Text="Estudos:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
+                    <Label Text="1" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
+                </StackLayout>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Margin="5, 0, 5, 0">
-                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-left" HorizontalOptions="Start" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 15, 0"/>
-                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-right" HorizontalOptions="Start" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 15, 0"/>
-                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-ios-list" HorizontalOptions="EndAndExpand" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 0, 0"/>
+                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-left" HorizontalOptions="StartAndExpand" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 0, 0"/>
+                <Label Text="Contagem iniciada em:" IsVisible="{Binding CounterStarted}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-right" HorizontalOptions="EndAndExpand" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 0, 0"/>
+                <!--
+                <iconize:IconButton WidthRequest="55" FontSize="27" 
+                                    TextColor="#187288" Text="ion-ios-list" 
+                                    HorizontalOptions="EndAndExpand" BorderColor="Transparent" 
+                                    BackgroundColor="White" Margin="0, 0, 0, 0"
+                                    Command="{Binding ReportListCommand}"/>-->
             </StackLayout>
-
             <StackLayout Margin="0, 0, 0, 0">
                 <StackLayout BackgroundColor="#187288" Padding="15, 15, 15, 15" Orientation="Horizontal">
                     <iconize:IconLabel FontSize="27" Text="ion-ios-pulse-strong" TextColor="#fa7843" Margin="0, 0, 15, 0"/>

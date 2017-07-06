@@ -40,8 +40,12 @@
     <Compile Include="ViewModels\MainMasterDetailPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\ReportEditionPageViewModel.cs" />
+    <Compile Include="ViewModels\ReportListPageViewModel.cs" />
     <Compile Include="Views\ReportEditionPage.xaml.cs">
       <DependentUpon>ReportEditionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportListPage.xaml.cs">
+      <DependentUpon>ReportListPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ReportEditionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ReportListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
