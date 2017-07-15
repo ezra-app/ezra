@@ -6,6 +6,45 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Ezra.Views.ReportListPage" Title="Junho 2017">
 
+    <StackLayout>
+        <ActivityIndicator x:Name="loadingIndicator" IsVisible="False"/>
+        <ListView IsVisible="False" x:Name="reportListView" CachingStrategy="RecycleElement" ItemsSource="{Binding SourceMocks}" HasUnevenRows="True" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="0" Margin="7">
+                            <StackLayout>
+                                <StackLayout BackgroundColor="#187288" Padding="15, 5, 15, 5" Orientation="Horizontal">
+                                    <Label Text="Sabado, 25" FontSize="Medium" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                                    <iconize:IconButton HeightRequest="45" WidthRequest="45" FontSize="20" 
+                                            TextColor="White" Text="ion-edit" 
+                                            HorizontalOptions="EndAndExpand" BorderColor="Transparent"
+                                            BackgroundColor="Transparent"/>
+                                    <iconize:IconButton HeightRequest="45" WidthRequest="45" FontSize="20" 
+                                            TextColor="#fa7843" Text="ion-android-delete" 
+                                            HorizontalOptions="End" BorderColor="Transparent" 
+                                            BackgroundColor="Transparent"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="15, 15, 15, 15">
+                                    <iconize:IconLabel FontSize="Medium" Text="ion-clock" TextColor="Black" Margin="0, 0, 5, 0"/>
+                                    <Label Text="{Binding Value}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <iconize:IconLabel FontSize="Medium" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 5, 0"/>
+                                    <Label Text="111" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <iconize:IconLabel FontSize="Medium" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 5, 0"/>
+                                    <Label Text="111" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <iconize:IconLabel FontSize="Medium" Text="ion-person" TextColor="Black" Margin="0, 0, 5, 0"/>
+                                    <Label Text="011" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <iconize:IconLabel FontSize="Medium" Text="ion-university" TextColor="Black" Margin="0, 0, 5, 10"/>
+                                    <Label Text="011" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    <!--
     <ScrollView>
         <StackLayout Margin="7">
             <Frame Padding="0, 0, 0, 0">
@@ -241,5 +280,5 @@
                 </StackLayout>
             </Frame>
         </StackLayout>
-    </ScrollView>
+    </ScrollView>-->
 </ContentPage>

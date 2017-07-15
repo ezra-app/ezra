@@ -37,12 +37,11 @@ namespace Ezra.Views
             Debug.WriteLine("Selectionei");
         }
 
-        private async void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
-            var originalColor = reportStackLayout.BackgroundColor;
-            await reportStackLayout.ScaleTo(0.9, 50, Easing.Linear);
-            await Task.Delay(100);
-            await reportStackLayout.ScaleTo(1, 50, Easing.Linear);
+            reportStackLayout.ScaleTo(0.9, 20, Easing.Linear);
+            //await Task.Delay(50);
+            reportStackLayout.ScaleTo(1, 20, Easing.Linear);
             ViewModel.ReportListCommandExecute();
         }
     }
