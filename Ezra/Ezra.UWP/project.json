@@ -5,6 +5,7 @@
     "Prism.Core": "6.3.0",
     "Prism.Forms": "6.3.0",
     "Prism.Unity.Forms": "6.3.0",
+    "SQLite.Net-PCL": "3.1.1",
     "Unity": "4.0.1",
     "Xam.FormsPlugin.Iconize": "1.0.10",
     "Xam.Plugin.Iconize": "1.0.10",

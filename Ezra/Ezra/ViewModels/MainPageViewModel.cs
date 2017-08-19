@@ -1,4 +1,6 @@
-﻿using Prism.Commands;
+﻿using Ezra.Data;
+using Ezra.Models;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -12,6 +14,15 @@ namespace Ezra.ViewModels
     public class MainPageViewModel : BindableBase, INavigationAware
     {
         private INavigationService NavigationService { get; set; }
+        public ReportItemDatabase ReportItemDatabase { get; set; }
+
+        private ReportItem reportSummary;
+        public ReportItem ReportSummary
+        {
+            get { return reportSummary; }
+            set { SetProperty(ref reportSummary, value); }
+        }
+
         private string title;
         public string Title
         {
@@ -36,15 +47,23 @@ namespace Ezra.ViewModels
         public ICommand AddCommand { get; set; }
         public ICommand ReportListCommand { get; set; }
         public ICommand DatePickerCommand { get; set; }
-        
+
         public MainPageViewModel(INavigationService navigationService)
         {
+            ReportSummary = new ReportItem();
+            ReportItemDatabase = new ReportItemDatabase();
+            LoadReportSummary();
             NavigationService = navigationService;
             HandleCounterIcon();
             StartCounterCommand = new Command(StartCounterCommandExecute);
             AddCommand = new Command(AddCommandExecute);
             ReportListCommand = new Command(ReportListCommandExecute);
             DatePickerCommand = new Command(DatePickerCommandExecute);
+        }
+
+        public void LoadReportSummary()
+        {
+            ReportSummary = ReportItemDatabase.GetReport(0, 0);
         }
 
         private void DatePickerCommandExecute(object obj)

@@ -44,5 +44,12 @@ namespace Ezra.Views
             reportStackLayout.ScaleTo(1, 20, Easing.Linear);
             ViewModel.ReportListCommandExecute();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ViewModel.LoadReportSummary();
+        }
+
     }
 }
