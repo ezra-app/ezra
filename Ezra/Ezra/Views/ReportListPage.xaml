@@ -27,7 +27,7 @@
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" Margin="15, 15, 15, 15">
                                     <iconize:IconLabel FontSize="Medium" Text="ion-clock" TextColor="Black" Margin="0, 0, 5, 0"/>
-                                    <Label Text="{Binding Hours}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding FormatedHour}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                                     <iconize:IconLabel FontSize="Medium" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 5, 0"/>
                                     <Label Text="{Binding Placements}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                                     <iconize:IconLabel FontSize="Medium" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 5, 0"/>

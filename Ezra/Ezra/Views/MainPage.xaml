@@ -28,7 +28,7 @@
                 <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
                     <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
                     <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
-                    <Label Text="{Binding ReportSummary.Hours}" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
+                    <Label Text="{Binding ReportSummary.FormatedHour}" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
                     <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>

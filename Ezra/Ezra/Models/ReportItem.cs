@@ -1,10 +1,5 @@
-﻿using SQLite;
-using SQLite.Net.Attributes;
+﻿using SQLite.Net.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ezra.Models
 {
@@ -21,5 +16,17 @@ namespace Ezra.Models
         public int Videos { get; set; }
         public int Studies { get; set; }
         public int ReturnVisits { get; set; }
+
+        [Ignore]
+        public string FormatedHour
+        {
+            get
+            {
+                TimeSpan ts = new TimeSpan(this.Hours, this.Minutes, 0);
+                return string.Format("{0:00}:", (ts.Days * 24 + ts.Hours))
+                    + string.Format("{0:00}", (ts.Minutes));
+            }
+        }
+
     }
 }
