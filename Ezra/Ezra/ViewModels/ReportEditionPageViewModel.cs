@@ -30,7 +30,6 @@ namespace Ezra.ViewModels
             NavigationService = navigationService;
             ReportItemDatabase = new ReportItemDatabase();
             ReportItem = new ReportItem();
-            ReportItem.Hours = 4;
 
             SaveCommand = new Command(SaveCommandExecute);
         }

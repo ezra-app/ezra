@@ -1,37 +1,30 @@
-﻿using Prism.Commands;
+﻿using Ezra.Data;
+using Ezra.Models;
 using Prism.Mvvm;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Ezra.ViewModels
 {
     public class ReportListPageViewModel : BindableBase
     {
-        public ObservableCollection<SourceMock> SourceMocks { get; set; }
+        public ObservableCollection<ReportItem> ReportItems { get; set; }
+        public ReportItemDatabase ReportItemDatabase { get; set; }
+
 
         public ReportListPageViewModel()
         {
-            SourceMocks = new ObservableCollection<SourceMock>();
+            ReportItems = new ObservableCollection<ReportItem>();
+            ReportItemDatabase = new ReportItemDatabase();
         }
 
         public void Load()
         {
-                SourceMocks.Add(new SourceMock("01:00"));
-                SourceMocks.Add(new SourceMock("02:00"));
-                SourceMocks.Add(new SourceMock("03:00"));
-                SourceMocks.Add(new SourceMock("04:00"));
-                SourceMocks.Add(new SourceMock("05:00"));
-                SourceMocks.Add(new SourceMock("06:00"));
-                SourceMocks.Add(new SourceMock("07:00"));
-                SourceMocks.Add(new SourceMock("08:00"));
-                SourceMocks.Add(new SourceMock("09:00"));
-                SourceMocks.Add(new SourceMock("10:00"));
-                SourceMocks.Add(new SourceMock("11:00"));
-                SourceMocks.Add(new SourceMock("12:00"));
-                SourceMocks.Add(new SourceMock("13:00"));
+            List<ReportItem> items = ReportItemDatabase.ListAll();
+            foreach(var item in items)
+            {
+                ReportItems.Add(item);
+            }
         }
     }
 
