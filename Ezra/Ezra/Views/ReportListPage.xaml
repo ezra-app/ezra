@@ -29,13 +29,13 @@
                                     <iconize:IconLabel FontSize="Medium" Text="ion-clock" TextColor="Black" Margin="0, 0, 5, 0"/>
                                     <Label Text="{Binding Hours}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                                     <iconize:IconLabel FontSize="Medium" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 5, 0"/>
-                                    <Label Text="{Binding ReturnVisits}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Placements}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                                     <iconize:IconLabel FontSize="Medium" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 5, 0"/>
-                                    <Label Text="111" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Videos}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                                     <iconize:IconLabel FontSize="Medium" Text="ion-person" TextColor="Black" Margin="0, 0, 5, 0"/>
-                                    <Label Text="011" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding ReturnVisits}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                                     <iconize:IconLabel FontSize="Medium" Text="ion-university" TextColor="Black" Margin="0, 0, 5, 10"/>
-                                    <Label Text="011" FontSize="Small" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Studies}" FontSize="Small" HorizontalOptions="StartAndExpand"/>
                                 </StackLayout>
                             </StackLayout>
                         </Frame>

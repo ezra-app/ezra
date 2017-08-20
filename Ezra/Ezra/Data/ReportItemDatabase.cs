@@ -34,6 +34,11 @@ namespace Ezra.Data
             foreach (var item in itens)
             {
                 reportSummary.Hours += item.Hours;
+                reportSummary.Minutes += item.Minutes;
+                reportSummary.Placements += item.Placements;
+                reportSummary.Videos += item.Videos;
+                reportSummary.Studies += item.Studies;
+                reportSummary.ReturnVisits += item.ReturnVisits;
             }
 
             return reportSummary;
