@@ -16,15 +16,15 @@
 
     <ScrollView>
         <StackLayout>
+            <StackLayout BackgroundColor="Transparent">
+                <DatePicker x:Name="myDatePicker" Date="{Binding DateControl}" IsVisible="False" IsEnabled="False" DateSelected="OnDatePickerSelected">
+                    <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                </DatePicker>
+            </StackLayout>
             <StackLayout x:Name="reportStackLayout">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </StackLayout.GestureRecognizers>
-                <StackLayout BackgroundColor="Transparent">
-                    <DatePicker x:Name="myDatePicker" Date="{Binding DateControl}" IsVisible="False" IsEnabled="False" DateSelected="OnDatePickerSelected">
-                        <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-                    </DatePicker>
-                </StackLayout>
                 <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
                     <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
                     <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>

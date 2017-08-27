@@ -4,7 +4,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Ezra.Views.ReportListPage" Title="Junho 2017">
+             x:Class="Ezra.Views.ReportListPage" Title="{Binding Title}}">
 
     <StackLayout>
         <ActivityIndicator x:Name="loadingIndicator" IsVisible="False"/>

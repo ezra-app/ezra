@@ -21,7 +21,6 @@ namespace Ezra.Views
             loadingIndicator.IsVisible = true;
             if(ViewModel != null)
             {
-                ViewModel.Load();
                 await Task.Delay(500);
             }
 

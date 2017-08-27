@@ -48,9 +48,11 @@ namespace Ezra.ViewModels
         public DateTime DateControl
         {
             get { return dateControl; }
-            set {
+            set
+            {
                 SetProperty(ref dateControl, value);
                 FormatTitle();
+                LoadReportSummary();
             }
         }
 
@@ -77,7 +79,10 @@ namespace Ezra.ViewModels
 
         public void LoadReportSummary()
         {
-            ReportSummary = ReportItemDatabase.GetReport(DateControl.Month, DateControl.Year);
+            if (ReportItemDatabase != null)
+            {
+                ReportSummary = ReportItemDatabase.GetReport(DateControl.Month, DateControl.Year);
+            }
         }
 
         private void DatePickerCommandExecute(object obj)
@@ -95,7 +100,9 @@ namespace Ezra.ViewModels
 
         public void ReportListCommandExecute()
         {
-            NavigationService.NavigateAsync("ReportListPage");
+            var navigationParams = new NavigationParameters();
+            navigationParams.Add("dateControl", DateControl);
+            NavigationService.NavigateAsync("ReportListPage", navigationParams);
         }
 
         private void AddCommandExecute(object obj)

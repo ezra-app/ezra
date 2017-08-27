@@ -20,15 +20,23 @@ namespace Ezra.Data
             GetDatabase().Insert(reportItem);
         }
 
-        public List<ReportItem> ListAll()
+        public List<ReportItem> ListReportsOrdered(int month, int year)
         {
-            return GetDatabase().Table<ReportItem>().ToList();
+            return (from r in GetDatabase().Table<ReportItem>()
+                 where
+                     r.Month == month && r.Year == year
+                 orderby r.Day descending
+                 select r).ToList();
         }
 
         public ReportItem GetReport(int month, int year)
         {
-            // List<ReportItem> itens = await GetDatabase().Table<ReportItem>().Where(i => i.Month == month && i.Year == year).ToListAsync();
-            List<ReportItem> itens = ListAll();
+            List<ReportItem> itens =
+                (from r in GetDatabase().Table<ReportItem>()
+                 where
+                     r.Month == month && r.Year == year
+                 select r).ToList();
+
 
             ReportItem reportSummary = new ReportItem();
             foreach (var item in itens)
