@@ -43,6 +43,17 @@ namespace Ezra.ViewModels
             get { return counterStarted; }
             set { SetProperty(ref counterStarted, value); }
         }
+
+        private DateTime dateControl;
+        public DateTime DateControl
+        {
+            get { return dateControl; }
+            set {
+                SetProperty(ref dateControl, value);
+                FormatTitle();
+            }
+        }
+
         public ICommand StartCounterCommand { get; set; }
         public ICommand AddCommand { get; set; }
         public ICommand ReportListCommand { get; set; }
@@ -50,11 +61,14 @@ namespace Ezra.ViewModels
 
         public MainPageViewModel(INavigationService navigationService)
         {
+            DateControl = DateTime.Now;
+            FormatTitle();
             ReportSummary = new ReportItem();
             ReportItemDatabase = new ReportItemDatabase();
             LoadReportSummary();
             NavigationService = navigationService;
             HandleCounterIcon();
+
             StartCounterCommand = new Command(StartCounterCommandExecute);
             AddCommand = new Command(AddCommandExecute);
             ReportListCommand = new Command(ReportListCommandExecute);
@@ -63,7 +77,7 @@ namespace Ezra.ViewModels
 
         public void LoadReportSummary()
         {
-            ReportSummary = ReportItemDatabase.GetReport(0, 0);
+            ReportSummary = ReportItemDatabase.GetReport(DateControl.Month, DateControl.Year);
         }
 
         private void DatePickerCommandExecute(object obj)
@@ -105,6 +119,12 @@ namespace Ezra.ViewModels
             {
                 CounterIconName = "play.png";
             }
+        }
+
+        private void FormatTitle()
+        {
+            var formatedMonthTitle = String.Format("{0:MMMM}", DateControl) + " " + DateControl.Year.ToString();
+            Title = formatedMonthTitle.Substring(0, 1).ToUpper() + formatedMonthTitle.Substring(1);
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

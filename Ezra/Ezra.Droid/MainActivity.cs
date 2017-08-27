@@ -23,6 +23,15 @@ namespace Ezra.Droid
             FormsPlugin.Iconize.Droid.IconControls.Init(Resource.Id.toolbar);
             Plugin.Iconize.Iconize
                       .With(new Plugin.Iconize.Fonts.IoniconsModule());
+
+ /*           if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
+            {
+                // Do something for lollipop and above versions
+            }
+            else
+            {
+                // do something for phones running an SDK before lollipop
+            }*/
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(200, 19, 91, 108));
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));

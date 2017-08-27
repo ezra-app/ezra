@@ -20,6 +20,7 @@ namespace Ezra.ViewModels
 
         public void Load()
         {
+            ReportItems.Clear();
             List<ReportItem> items = ReportItemDatabase.ListAll();
             foreach(var item in items)
             {

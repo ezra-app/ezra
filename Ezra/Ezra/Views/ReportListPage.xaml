@@ -15,7 +15,7 @@
                         <Frame Padding="0" Margin="7">
                             <StackLayout>
                                 <StackLayout BackgroundColor="#187288" Padding="15, 5, 15, 5" Orientation="Horizontal">
-                                    <Label Text="Sabado, 25" FontSize="Medium" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                                    <Label Text="{Binding FormatedDateWeek}" FontSize="Medium" TextColor="White" VerticalOptions="CenterAndExpand"/>
                                     <iconize:IconButton HeightRequest="45" WidthRequest="45" FontSize="20" 
                                             TextColor="White" Text="ion-edit" 
                                             HorizontalOptions="EndAndExpand" BorderColor="Transparent"

@@ -28,5 +28,37 @@ namespace Ezra.Models
             }
         }
 
+        [Ignore]
+        public string FormatedDateWeek
+        {
+            get
+            {
+                DateTime date = DateTime.Now;
+                if (this.Year != 0)
+                {
+                    date = new DateTime(this.Year, this.Month, this.Day);
+                }
+
+                string formatedDateWeek = String.Format("{0:dddd}", date) + ", " + String.Format("{0:dd}", date);
+                return formatedDateWeek.Substring(0, 1).ToUpper() + formatedDateWeek.Substring(1);
+            }
+        }
+
+        [Ignore]
+        public string FormatedDateMonth
+        {
+            get
+            {
+                DateTime date = DateTime.Now;
+                if (this.Year != 0)
+                {
+                    date = new DateTime(this.Year, this.Month, this.Day);
+                }
+
+                string formatedMonth = String.Format("{0:MMMM}", date) + " " + date.Year.ToString();
+                return formatedMonth.Substring(0, 1).ToUpper() + formatedMonth.Substring(1);
+            }
+        }
+
     }
 }
