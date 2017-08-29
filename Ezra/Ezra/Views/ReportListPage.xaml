@@ -4,7 +4,8 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Ezra.Views.ReportListPage" Title="{Binding Title}}">
+             x:Class="Ezra.Views.ReportListPage" Title="{Binding Title}}"
+             x:Name="root">
 
     <StackLayout>
         <ActivityIndicator x:Name="loadingIndicator" IsVisible="False"/>
@@ -19,11 +20,13 @@
                                     <iconize:IconButton HeightRequest="45" WidthRequest="45" FontSize="20" 
                                             TextColor="White" Text="ion-edit" 
                                             HorizontalOptions="EndAndExpand" BorderColor="Transparent"
-                                            BackgroundColor="Transparent"/>
+                                            BackgroundColor="Transparent" Command="{Binding Path=EditCommand}"/>
                                     <iconize:IconButton HeightRequest="45" WidthRequest="45" FontSize="20" 
-                                            TextColor="#fa7843" Text="ion-android-delete" 
+                                            TextColor="#fa7843" Text="ion-android-delete"
                                             HorizontalOptions="End" BorderColor="Transparent" 
-                                            BackgroundColor="Transparent"/>
+                                            BackgroundColor="Transparent" 
+                                            Command="{Binding Source={x:Reference root}, Path=BindingContext.DeleteCommand}"
+                                            CommandParameter="{Binding .}"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" Margin="15, 15, 15, 15">
                                     <iconize:IconLabel FontSize="Medium" Text="ion-clock" TextColor="Black" Margin="0, 0, 5, 0"/>

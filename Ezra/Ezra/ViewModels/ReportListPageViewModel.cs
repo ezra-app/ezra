@@ -5,6 +5,9 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Ezra.ViewModels
 {
@@ -30,11 +33,27 @@ namespace Ezra.ViewModels
             set { SetProperty(ref title, value); }
         }
 
+        public ICommand EditCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
+
         public ReportListPageViewModel()
         {
             FormatTitle();
             ReportItems = new ObservableCollection<ReportItem>();
             ReportItemDatabase = new ReportItemDatabase();
+            EditCommand = new Command(EditCommandExecute);
+            DeleteCommand = new Command(DeleteCommandExecute);
+        }
+
+        private void DeleteCommandExecute(object reportItem)
+        {
+            ReportItemDatabase.Delete((ReportItem) reportItem);
+            Load();
+        }
+
+        private void EditCommandExecute(object obj)
+        {
+            throw new NotImplementedException();
         }
 
         public void Load()

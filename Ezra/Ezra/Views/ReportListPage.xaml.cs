@@ -7,7 +7,6 @@ namespace Ezra.Views
 {
     public partial class ReportListPage : ContentPage
     {
-        private ReportListPageViewModel ViewModel => BindingContext as ReportListPageViewModel;
         public ReportListPage()
         {
             InitializeComponent();
