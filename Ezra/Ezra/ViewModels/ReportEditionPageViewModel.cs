@@ -39,10 +39,10 @@ namespace Ezra.ViewModels
             ReportItem = new ReportItem();
             DateControl = DateTime.Now;
 
-            SaveCommand = new Command(SaveCommandExecute);
+            SaveCommand = new DelegateCommand(SaveCommandExecute);
         }
 
-        private void SaveCommandExecute(object obj)
+        private void SaveCommandExecute()
         {
             ReportItem.Day = DateControl.Day;
             ReportItem.Month = DateControl.Month;

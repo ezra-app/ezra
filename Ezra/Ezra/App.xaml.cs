@@ -2,6 +2,7 @@
 using Ezra.Views;
 using Xamarin.Forms;
 using Ezra.Data;
+using Ezra.ViewModels;
 
 namespace Ezra
 {
@@ -23,11 +24,11 @@ namespace Ezra
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
-            Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<MainPage, MainPageViewModel>();
             Container.RegisterTypeForNavigation<EzraNavigationPage>();
             Container.RegisterTypeForNavigation<MainMasterDetailPage>();
-            Container.RegisterTypeForNavigation<ReportEditionPage>();
-            Container.RegisterTypeForNavigation<ReportListPage>();
+            Container.RegisterTypeForNavigation<ReportEditionPage, ReportEditionPageViewModel>();
+            Container.RegisterTypeForNavigation<ReportListPage, ReportListPageViewModel>();
         }
 
         public static EzraDatabaseManager DatabaseManager

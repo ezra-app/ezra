@@ -71,10 +71,10 @@ namespace Ezra.ViewModels
             NavigationService = navigationService;
             HandleCounterIcon();
 
-            StartCounterCommand = new Command(StartCounterCommandExecute);
-            AddCommand = new Command(AddCommandExecute);
-            ReportListCommand = new Command(ReportListCommandExecute);
-            DatePickerCommand = new Command(DatePickerCommandExecute);
+            StartCounterCommand = new DelegateCommand(StartCounterCommandExecute);
+            AddCommand = new DelegateCommand(AddCommandExecute);
+            ReportListCommand = new DelegateCommand(ReportListCommandExecute);
+            DatePickerCommand = new DelegateCommand(DatePickerCommandExecute);
         }
 
         public void LoadReportSummary()
@@ -85,7 +85,7 @@ namespace Ezra.ViewModels
             }
         }
 
-        private void DatePickerCommandExecute(object obj)
+        private void DatePickerCommandExecute()
         {
             DatePicker datePicker = new DatePicker
             {
@@ -105,12 +105,12 @@ namespace Ezra.ViewModels
             NavigationService.NavigateAsync("ReportListPage", navigationParams);
         }
 
-        private void AddCommandExecute(object obj)
+        private void AddCommandExecute()
         {
             NavigationService.NavigateAsync("ReportEditionPage");
         }
 
-        private void StartCounterCommandExecute(object obj)
+        private void StartCounterCommandExecute()
         {
             CounterStarted = !CounterStarted;
             HandleCounterIcon();

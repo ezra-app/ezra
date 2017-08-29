@@ -52,9 +52,9 @@ namespace Ezra.Data
             return reportSummary;
         }
 
-        public void Delete(ReportItem item)
+        public void Delete(int id)
         {
-            GetDatabase().Delete<ReportItem>(item.Id);
+            GetDatabase().Delete<ReportItem>(id);
         }
 
     }

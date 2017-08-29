@@ -1,5 +1,6 @@
 ﻿using Ezra.Data;
 using Ezra.Models;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -41,17 +42,17 @@ namespace Ezra.ViewModels
             FormatTitle();
             ReportItems = new ObservableCollection<ReportItem>();
             ReportItemDatabase = new ReportItemDatabase();
-            EditCommand = new Command(EditCommandExecute);
-            DeleteCommand = new Command(DeleteCommandExecute);
+            EditCommand = new DelegateCommand(EditCommandExecute);
+            DeleteCommand = new DelegateCommand<object>(DeleteCommandExecute);
         }
 
-        private void DeleteCommandExecute(object reportItem)
+        private void DeleteCommandExecute(object id)
         {
-            ReportItemDatabase.Delete((ReportItem) reportItem);
+            ReportItemDatabase.Delete((int) id);
             Load();
         }
 
-        private void EditCommandExecute(object obj)
+        private void EditCommandExecute()
         {
             throw new NotImplementedException();
         }
@@ -74,7 +75,6 @@ namespace Ezra.ViewModels
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
-            throw new NotImplementedException();
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
