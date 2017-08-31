@@ -13,9 +13,9 @@
 
     <ScrollView>
         <StackLayout Margin="15, 12, 15, 2">
-            <StackLayout>
+            <StackLayout HorizontalOptions="Center">
                 <DatePicker Date="{Binding DateControl}">
-                    <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                    <DatePicker.Format>dd/MM/yyyy (dddd)</DatePicker.Format>
                     <DatePicker.MinimumDate>
                         <sys:DateTime x:FactoryMethod="Parse">
                             <x:Arguments>

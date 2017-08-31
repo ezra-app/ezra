@@ -18,7 +18,7 @@ namespace Ezra.Views
             base.OnAppearing();
             loadingIndicator.IsRunning = true;
             loadingIndicator.IsVisible = true;
-            await Task.Delay(500);
+            await Task.Delay(200);
 
             loadingIndicator.IsRunning = false;
             loadingIndicator.IsVisible = false;

@@ -14,6 +14,7 @@ namespace Ezra.ViewModels
 {
     public class ReportListPageViewModel : BindableBase, INavigationAware
     {
+        private INavigationService NavigationService { get; set; }
         public ObservableCollection<ReportItem> ReportItems { get; set; }
         public ReportItemDatabase ReportItemDatabase { get; set; }
 
@@ -37,13 +38,14 @@ namespace Ezra.ViewModels
         public ICommand EditCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
 
-        public ReportListPageViewModel()
+        public ReportListPageViewModel(INavigationService navigationService)
         {
             FormatTitle();
             ReportItems = new ObservableCollection<ReportItem>();
             ReportItemDatabase = new ReportItemDatabase();
-            EditCommand = new DelegateCommand(EditCommandExecute);
+            EditCommand = new DelegateCommand<object>(EditCommandExecute);
             DeleteCommand = new DelegateCommand<object>(DeleteCommandExecute);
+            NavigationService = navigationService;
         }
 
         private void DeleteCommandExecute(object id)
@@ -52,9 +54,11 @@ namespace Ezra.ViewModels
             Load();
         }
 
-        private void EditCommandExecute()
+        private void EditCommandExecute(object reportItem)
         {
-            throw new NotImplementedException();
+            var navigationParams = new NavigationParameters();
+            navigationParams.Add("reportItem", (ReportItem) reportItem);
+            NavigationService.NavigateAsync("ReportEditionPage", navigationParams);
         }
 
         public void Load()
@@ -79,16 +83,16 @@ namespace Ezra.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
             if (parameters.ContainsKey("dateControl"))
             {
                 DateControl = (DateTime)parameters["dateControl"];
             }
             FormatTitle();
             Load();
-        }
-
-        public void OnNavigatingTo(NavigationParameters parameters)
-        {
         }
     }
 

@@ -15,17 +15,19 @@
                     <ViewCell>
                         <Frame Padding="0" Margin="7">
                             <StackLayout>
-                                <StackLayout BackgroundColor="#187288" Padding="15, 5, 15, 5" Orientation="Horizontal">
+                                <StackLayout x:Name="reportListStackLayout" BackgroundColor="#187288" Padding="15, 5, 15, 5" Orientation="Horizontal">
                                     <Label Text="{Binding FormatedDateWeek}" FontSize="Medium" TextColor="White" VerticalOptions="CenterAndExpand"/>
                                     <iconize:IconButton HeightRequest="45" WidthRequest="45" FontSize="20" 
                                             TextColor="White" Text="ion-edit" 
                                             HorizontalOptions="EndAndExpand" BorderColor="Transparent"
-                                            BackgroundColor="Transparent" Command="{Binding Path=EditCommand}"/>
+                                            BackgroundColor="Transparent" 
+                                            Command="{Binding Path=BindingContext.EditCommand, Source={x:Reference pageRoot}}"
+                                            CommandParameter="{Binding Path=BindingContext, Source={x:Reference reportListStackLayout}}"/>
                                     <iconize:IconButton HeightRequest="45" WidthRequest="45" FontSize="20" 
                                             TextColor="#fa7843" Text="ion-android-delete"
                                             HorizontalOptions="End" BorderColor="Transparent" 
                                             BackgroundColor="Transparent" 
-                                            Command="{Binding Source={x:Reference pageRoot}, Path=BindingContext.DeleteCommand}"
+                                            Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference pageRoot}}"
                                             CommandParameter="{Binding Id}"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" Margin="15, 15, 15, 15">

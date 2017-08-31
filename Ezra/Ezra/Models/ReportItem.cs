@@ -60,5 +60,19 @@ namespace Ezra.Models
             }
         }
 
+        [Ignore]
+        public DateTime Date
+        {
+            get
+            {
+                DateTime date = DateTime.Now;
+                if (this.Year != 0)
+                {
+                    date = new DateTime(this.Year, this.Month, this.Day);
+                }
+                return date;
+            }
+        }
+
     }
 }
