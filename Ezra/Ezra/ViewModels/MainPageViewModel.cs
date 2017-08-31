@@ -60,6 +60,8 @@ namespace Ezra.ViewModels
         public ICommand AddCommand { get; set; }
         public ICommand ReportListCommand { get; set; }
         public ICommand DatePickerCommand { get; set; }
+        public ICommand BackDateCommand { get; set; }
+        public ICommand ForwardDateCommand { get; set; }
 
         public MainPageViewModel(INavigationService navigationService)
         {
@@ -75,6 +77,8 @@ namespace Ezra.ViewModels
             AddCommand = new DelegateCommand(AddCommandExecute);
             ReportListCommand = new DelegateCommand(ReportListCommandExecute);
             DatePickerCommand = new DelegateCommand(DatePickerCommandExecute);
+            BackDateCommand = new DelegateCommand(BackDateCommandExecute);
+            ForwardDateCommand = new DelegateCommand(ForwardCommandExecute);
         }
 
         public void LoadReportSummary()
@@ -83,6 +87,16 @@ namespace Ezra.ViewModels
             {
                 ReportSummary = ReportItemDatabase.GetReport(DateControl.Month, DateControl.Year);
             }
+        }
+
+        private void ForwardCommandExecute()
+        {
+            DateControl = DateControl.AddMonths(1);
+        }
+
+        private void BackDateCommandExecute()
+        {
+            DateControl = DateControl.AddMonths(-1);
         }
 
         private void DatePickerCommandExecute()

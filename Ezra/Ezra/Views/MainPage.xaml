@@ -52,9 +52,20 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout Orientation="Horizontal" Margin="5, 0, 5, 0">
-                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-left" HorizontalOptions="StartAndExpand" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 0, 0"/>
-                <Label Text="Contagem iniciada em:" IsVisible="{Binding CounterStarted}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
-                <iconize:IconButton WidthRequest="55" FontSize="27" TextColor="#187288" Text="ion-chevron-right" HorizontalOptions="EndAndExpand" BorderColor="Transparent" BackgroundColor="White" Margin="0, 0, 0, 0"/>
+                <iconize:IconButton WidthRequest="55" FontSize="27" 
+                                    TextColor="#187288" Text="ion-chevron-left" 
+                                    HorizontalOptions="StartAndExpand" 
+                                    BorderColor="Transparent" 
+                                    BackgroundColor="White" 
+                                    Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
+                <Label Text="Contagem iniciada em:" IsVisible="{Binding CounterStarted}" 
+                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                <iconize:IconButton WidthRequest="55" FontSize="27" 
+                                    TextColor="#187288" Text="ion-chevron-right" 
+                                    HorizontalOptions="EndAndExpand" 
+                                    BorderColor="Transparent" 
+                                    BackgroundColor="White" 
+                                    Margin="0, 0, 0, 0" Command="{Binding ForwardDateCommand}"/>
                 <!--
                 <iconize:IconButton WidthRequest="55" FontSize="27" 
                                     TextColor="#187288" Text="ion-ios-list" 

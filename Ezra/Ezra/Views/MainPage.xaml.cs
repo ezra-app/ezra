@@ -29,12 +29,11 @@ namespace Ezra.Views
 
         private void OnDatePickerSelected(object sender, System.EventArgs e)
         {
-            if (Device.RuntimePlatform == Device.WinPhone || Device.RuntimePlatform == Device.Windows)
+            if ((Device.RuntimePlatform == Device.WinPhone || Device.RuntimePlatform == Device.Windows) 
+                && myDatePicker.IsVisible)
             {
-                myDatePicker.IsVisible = !myDatePicker.IsVisible;
-                Debug.WriteLine("Selectionei");
+                myDatePicker.IsVisible = false;
             }
-            Debug.WriteLine("Selectionei");
         }
 
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
