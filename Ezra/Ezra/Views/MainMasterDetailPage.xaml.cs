@@ -9,9 +9,10 @@ namespace Ezra.Views
             InitializeComponent();
             Master = new ContentPage()
             {
-                Title = "Master Page"
+                Title = "Retório"
             };
             Detail = new EzraNavigationPage(new MainPage());
+            MasterBehavior = MasterBehavior.Popover;
         }
     }
 }
