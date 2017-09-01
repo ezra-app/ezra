@@ -24,5 +24,26 @@ namespace Ezra.Views
             loadingIndicator.IsVisible = false;
             reportListView.IsVisible = true;
         }
+
+        private void OnDatePickerClicked(object sender, System.EventArgs e)
+        {
+            if (Device.RuntimePlatform == Device.WinPhone || Device.RuntimePlatform == Device.Windows)
+            {
+                myDatePicker.IsVisible = !myDatePicker.IsVisible;
+            }
+
+            myDatePicker.IsEnabled = true;
+            myDatePicker.Focus();
+
+        }
+
+        private void OnDatePickerSelected(object sender, System.EventArgs e)
+        {
+            if ((Device.RuntimePlatform == Device.WinPhone || Device.RuntimePlatform == Device.Windows)
+                && myDatePicker.IsVisible)
+            {
+                myDatePicker.IsVisible = false;
+            }
+        }
     }
 }

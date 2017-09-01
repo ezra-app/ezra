@@ -7,7 +7,17 @@
              x:Class="Ezra.Views.ReportListPage" Title="{Binding Title}}"
              x:Name="pageRoot">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Data" Icon="calendar.png" Clicked="OnDatePickerClicked"/>
+        <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}"/>
+    </ContentPage.ToolbarItems>
+
     <StackLayout>
+        <StackLayout BackgroundColor="Transparent">
+            <DatePicker x:Name="myDatePicker" Date="{Binding DateControl}" IsVisible="False" IsEnabled="False" DateSelected="OnDatePickerSelected">
+                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+            </DatePicker>
+        </StackLayout>
         <ActivityIndicator x:Name="loadingIndicator" IsVisible="False"/>
         <ListView IsVisible="False" x:Name="reportListView" CachingStrategy="RecycleElement" ItemsSource="{Binding ReportItems}" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.ItemTemplate>

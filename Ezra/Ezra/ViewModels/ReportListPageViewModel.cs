@@ -25,6 +25,7 @@ namespace Ezra.ViewModels
             set
             {
                 SetProperty(ref dateControl, value);
+                Load();
             }
         }
 
@@ -37,6 +38,8 @@ namespace Ezra.ViewModels
 
         public ICommand EditCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
+        public ICommand AddCommand { get; set; }
+
 
         public ReportListPageViewModel(INavigationService navigationService)
         {
@@ -45,6 +48,7 @@ namespace Ezra.ViewModels
             ReportItemDatabase = new ReportItemDatabase();
             EditCommand = new DelegateCommand<object>(EditCommandExecute);
             DeleteCommand = new DelegateCommand<object>(DeleteCommandExecute);
+            AddCommand = new DelegateCommand(AddCommandExecute);
             NavigationService = navigationService;
         }
 
@@ -59,6 +63,11 @@ namespace Ezra.ViewModels
             var navigationParams = new NavigationParameters();
             navigationParams.Add("reportItem", (ReportItem) reportItem);
             NavigationService.NavigateAsync("ReportEditionPage", navigationParams);
+        }
+
+        private void AddCommandExecute()
+        {
+            NavigationService.NavigateAsync("ReportEditionPage");
         }
 
         public void Load()
