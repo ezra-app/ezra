@@ -39,7 +39,7 @@ namespace Ezra.Models
                     date = new DateTime(this.Year, this.Month, this.Day);
                 }
 
-                string formatedDateWeek = String.Format("{0:dddd}", date) + ", " + String.Format("{0:dd}", date);
+                string formatedDateWeek = String.Format("{0:dddd, dd}", date);
                 return formatedDateWeek.Substring(0, 1).ToUpper() + formatedDateWeek.Substring(1);
             }
         }

@@ -82,7 +82,7 @@ namespace Ezra.ViewModels
 
         private void FormatTitle()
         {
-            var formatedMonthTitle = String.Format("{0:MMMM}", DateControl) + " " + DateControl.Year.ToString();
+            var formatedMonthTitle = String.Format("{0:MMM yyyy}", DateControl);
             Title = formatedMonthTitle.Substring(0, 1).ToUpper() + formatedMonthTitle.Substring(1);
         }
 
