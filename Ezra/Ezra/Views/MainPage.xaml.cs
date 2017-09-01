@@ -17,7 +17,7 @@ namespace Ezra.Views
 
         private void OnDatePickerClicked(object sender, System.EventArgs e)
         {
-            if (Device.RuntimePlatform == Device.WinPhone || Device.RuntimePlatform == Device.Windows)
+            if (Device.RuntimePlatform == "UWP")
             {
                 myDatePicker.IsVisible = !myDatePicker.IsVisible;
             }
@@ -29,8 +29,7 @@ namespace Ezra.Views
 
         private void OnDatePickerSelected(object sender, System.EventArgs e)
         {
-            if ((Device.RuntimePlatform == Device.WinPhone || Device.RuntimePlatform == Device.Windows) 
-                && myDatePicker.IsVisible)
+            if ((Device.RuntimePlatform == "UWP") && myDatePicker.IsVisible)
             {
                 myDatePicker.IsVisible = false;
             }
