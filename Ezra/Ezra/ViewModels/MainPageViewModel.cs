@@ -59,7 +59,6 @@ namespace Ezra.ViewModels
         public ICommand StartCounterCommand { get; set; }
         public ICommand AddCommand { get; set; }
         public ICommand ReportListCommand { get; set; }
-        public ICommand DatePickerCommand { get; set; }
         public ICommand BackDateCommand { get; set; }
         public ICommand ForwardDateCommand { get; set; }
 
@@ -76,7 +75,6 @@ namespace Ezra.ViewModels
             StartCounterCommand = new DelegateCommand(StartCounterCommandExecute);
             AddCommand = new DelegateCommand(AddCommandExecute);
             ReportListCommand = new DelegateCommand(ReportListCommandExecute);
-            DatePickerCommand = new DelegateCommand(DatePickerCommandExecute);
             BackDateCommand = new DelegateCommand(BackDateCommandExecute);
             ForwardDateCommand = new DelegateCommand(ForwardCommandExecute);
         }
@@ -97,19 +95,6 @@ namespace Ezra.ViewModels
         private void BackDateCommandExecute()
         {
             DateControl = DateControl.AddMonths(-1);
-        }
-
-        private void DatePickerCommandExecute()
-        {
-            DatePicker datePicker = new DatePicker
-            {
-                Format = "D",
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                IsVisible = false,
-                IsEnabled = true,
-            };
-            datePicker.IsEnabled = true;
-            datePicker.Focus();
         }
 
         public void ReportListCommandExecute()
