@@ -3,6 +3,7 @@ using Ezra.Models;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +16,7 @@ namespace Ezra.ViewModels
     public class ReportListPageViewModel : BindableBase, INavigationAware
     {
         private INavigationService NavigationService { get; set; }
+        private IPageDialogService DialogService { get; set; }
         public ObservableCollection<ReportItem> ReportItems { get; set; }
         public ReportItemDatabase ReportItemDatabase { get; set; }
 
@@ -41,21 +43,26 @@ namespace Ezra.ViewModels
         public ICommand AddCommand { get; set; }
 
 
-        public ReportListPageViewModel(INavigationService navigationService)
+        public ReportListPageViewModel(INavigationService navigationService, IPageDialogService dialogService)
         {
+            NavigationService = navigationService;
+            DialogService = dialogService;
             FormatTitle();
             ReportItems = new ObservableCollection<ReportItem>();
             ReportItemDatabase = new ReportItemDatabase();
             EditCommand = new DelegateCommand<object>(EditCommandExecute);
             DeleteCommand = new DelegateCommand<object>(DeleteCommandExecute);
             AddCommand = new DelegateCommand(AddCommandExecute);
-            NavigationService = navigationService;
         }
 
-        private void DeleteCommandExecute(object id)
+        private async void DeleteCommandExecute(object id)
         {
-            ReportItemDatabase.Delete((int) id);
-            Load();
+            var answer = await DialogService.DisplayAlertAsync($"Remover Relatório", "Gostaria realmente remover?", "Sim", "Não");
+            if(answer)
+            {
+                ReportItemDatabase.Delete((int)id);
+                Load();
+            }
         }
 
         private void EditCommandExecute(object reportItem)
