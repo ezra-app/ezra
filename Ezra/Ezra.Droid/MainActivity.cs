@@ -20,9 +20,9 @@ namespace Ezra.Droid
             ToolbarResource = Resource.Layout.toolbar;
 
             base.OnCreate(bundle);
-            FormsPlugin.Iconize.Droid.IconControls.Init(Resource.Id.toolbar);
+            /*FormsPlugin.Iconize.Droid.IconControls.Init(Resource.Id.toolbar);
             Plugin.Iconize.Iconize
-                      .With(new Plugin.Iconize.Fonts.IoniconsModule());
+                      .With(new Plugin.Iconize.Fonts.IoniconsModule());*/
 
  /*           if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
             {

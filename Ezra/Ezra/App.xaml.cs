@@ -14,7 +14,7 @@ namespace Ezra
         protected override void OnInitialized()
         {
             InitializeComponent();
-
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.IoniconsModule());
             //NavigationService.NavigateAsync("EzraNavigationPage/MainPage?title=Hello%20from%20Xamarin.Forms");
             NavigationService.NavigateAsync("MainMasterDetailPage");
             //MainPage = new MainMasterDetailPage();

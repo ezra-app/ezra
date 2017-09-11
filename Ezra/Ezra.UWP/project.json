@@ -7,13 +7,12 @@
     "Prism.Unity.Forms": "6.3.0",
     "SQLite.Net-PCL": "3.1.1",
     "Unity": "4.0.1",
-    "Xam.FormsPlugin.Iconize": "1.0.10",
-    "Xam.Plugin.Iconize": "1.0.10",
-    "Xam.Plugin.Iconize.Ionicons": "1.0.10",
+    "Xam.Plugin.Iconize": "2.0.0.29-beta",
+    "Xam.Plugin.Iconize.Ionicons": "2.0.0.29-beta",
     "Xamarin.Forms": "2.3.5.256-pre6"
   },
   "frameworks": {
-    "uap10.0": {}
+    "uap10.0.14393": {}
   },
   "runtimes": {
     "win10-arm": {},
