@@ -23,8 +23,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Padding="0" Margin="7">
-                            <StackLayout>
+                        <Frame Padding="0">
+                            <StackLayout Margin="7, 7, 7, 7">
                                 <StackLayout x:Name="reportListStackLayout" BackgroundColor="#187288" Padding="15, 5, 15, 5" Orientation="Horizontal">
                                     <Label Text="{Binding FormatedDateWeek}" FontSize="Medium" TextColor="White" VerticalOptions="CenterAndExpand"/>
                                     <iconize:IconButton HeightRequest="45" WidthRequest="45" FontSize="20" 
