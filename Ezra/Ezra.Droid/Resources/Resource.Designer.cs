@@ -2755,11 +2755,11 @@ namespace Ezra.Droid
 			// aapt resource value: 0x7f02010d
 			public const int notification_icon_background = 2130837773;
 			
-			// aapt resource value: 0x7f020112
-			public const int notification_template_icon_bg = 2130837778;
-			
 			// aapt resource value: 0x7f020113
-			public const int notification_template_icon_low_bg = 2130837779;
+			public const int notification_template_icon_bg = 2130837779;
+			
+			// aapt resource value: 0x7f020114
+			public const int notification_template_icon_low_bg = 2130837780;
 			
 			// aapt resource value: 0x7f02010e
 			public const int notification_tile_bg = 2130837774;
@@ -2772,6 +2772,9 @@ namespace Ezra.Droid
 			
 			// aapt resource value: 0x7f020111
 			public const int play = 2130837777;
+			
+			// aapt resource value: 0x7f020112
+			public const int settings = 2130837778;
 			
 			static Drawable()
 			{

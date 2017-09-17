@@ -9,9 +9,10 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}"/>
         <ToolbarItem Text="Data" Icon="calendar.png" Clicked="OnDatePickerClicked"/>
         <ToolbarItem Text="Iniciar" Icon="{Binding CounterIconName}" Command="{Binding StartCounterCommand}"/>
-        <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}"/>
+        <ToolbarItem Text="Configurações" Icon="settings.png" Command="{Binding SettingsCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>

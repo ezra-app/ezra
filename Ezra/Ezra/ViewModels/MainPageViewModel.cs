@@ -61,6 +61,7 @@ namespace Ezra.ViewModels
         public ICommand ReportListCommand { get; set; }
         public ICommand BackDateCommand { get; set; }
         public ICommand ForwardDateCommand { get; set; }
+        public ICommand SettingsCommand { get; set; }
 
         public MainPageViewModel(INavigationService navigationService)
         {
@@ -77,6 +78,12 @@ namespace Ezra.ViewModels
             ReportListCommand = new DelegateCommand(ReportListCommandExecute);
             BackDateCommand = new DelegateCommand(BackDateCommandExecute);
             ForwardDateCommand = new DelegateCommand(ForwardCommandExecute);
+            SettingsCommand = new DelegateCommand(SettingsCommandExecute);
+        }
+
+        private void SettingsCommandExecute()
+        {
+            NavigationService.NavigateAsync("SettingsPage");
         }
 
         public void LoadReportSummary()

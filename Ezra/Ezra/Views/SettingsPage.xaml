@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Ezra.Views.SettingsPage">
+
+    <TableView Intent="Settings">
+        <TableRoot>
+            <TableSection Title="Metas">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Requisito de Horas"
+                              TextColor="#f35e20" />
+                        <Entry Keyboard="Numeric" />
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+
+</ContentPage>
