@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Ezra.Data
 {
-    public abstract class BaseDatabase
+    public class BaseDatabase
     {
-        protected SQLiteConnection GetDatabase()
+        public SQLiteConnection GetDatabase()
         {
             return App.DatabaseManager.Database;
         }

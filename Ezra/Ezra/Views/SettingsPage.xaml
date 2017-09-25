@@ -4,20 +4,21 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Ezra.Views.SettingsPage">
-
+             x:Class="Ezra.Views.SettingsPage"
+             Title="Configurações">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" Icon="checkmark.png" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    
     <TableView Intent="Settings">
         <TableRoot>
+            <TableSection Title="Geral">
+                <EntryCell Label="Nome" Text="{Binding Settings.Name}"/>
+                <EntryCell Label="Email" Keyboard="Email" Text="{Binding Settings.Email}"/>
+            </TableSection> 
             <TableSection Title="Metas">
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Requisito de Horas"
-                              TextColor="#f35e20" />
-                        <Entry Keyboard="Numeric" />
-                    </StackLayout>
-                </ViewCell>
+                <EntryCell Label="Requisito de Horas" Text="{Binding Settings.HoursTarget}" Keyboard="Numeric" Height="6"/>
             </TableSection>
         </TableRoot>
     </TableView>
-
 </ContentPage>
