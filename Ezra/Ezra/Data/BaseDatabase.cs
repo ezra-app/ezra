@@ -13,5 +13,15 @@ namespace Ezra.Data
         {
             return App.DatabaseManager.Database;
         }
+
+        public void Save(object obj)
+        {
+            GetDatabase().Insert(obj);
+        }
+
+        public void Update(object obj)
+        {
+            GetDatabase().Update(obj);
+        }
     }
 }

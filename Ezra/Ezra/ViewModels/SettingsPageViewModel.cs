@@ -19,7 +19,7 @@ namespace Ezra.ViewModels
             set { SetProperty(ref settings, value); }
         }
 
-        public BaseDatabase BaseDatabase { get; set; }
+        public SettingsDatabase SettingsDatabase { get; set; }
 
         public INavigationService NavigationService { get; }
         public ICommand SaveCommand { get; set; }
@@ -28,30 +28,29 @@ namespace Ezra.ViewModels
         {
             NavigationService = navigationService;
             SaveCommand = new DelegateCommand(SaveCommandExecute);
-            BaseDatabase = new BaseDatabase();
+            SettingsDatabase = new SettingsDatabase();
             LoadSettings();
         }
 
         private void SaveCommandExecute()
         {
 
-            var db = BaseDatabase.GetDatabase();
-            Settings currentSettings = db.Table<Settings>().FirstOrDefault();
+            Settings currentSettings = SettingsDatabase.GetSettings();
             if (currentSettings != null)
             {
                 Settings.Id = currentSettings.Id;
-                db.Update(Settings);
+                SettingsDatabase.Update(Settings);
             }
             else
             {
-                db.Insert(Settings);
+                SettingsDatabase.Save(Settings);
             }
             NavigationService.GoBackAsync();
         }
 
         private void LoadSettings()
         {
-            Settings currentSettings = BaseDatabase.GetDatabase().Table<Settings>().FirstOrDefault();
+            Settings currentSettings = SettingsDatabase.GetSettings();
             if(currentSettings != null)
             {
                 Settings = currentSettings;

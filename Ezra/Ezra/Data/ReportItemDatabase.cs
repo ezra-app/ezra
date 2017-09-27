@@ -15,11 +15,6 @@ namespace Ezra.Data
 
         }
 
-        public void Save(ReportItem reportItem)
-        {
-            GetDatabase().Insert(reportItem);
-        }
-
         public List<ReportItem> ListReportsOrdered(int month, int year)
         {
             return (from r in GetDatabase().Table<ReportItem>()
@@ -55,11 +50,6 @@ namespace Ezra.Data
         public void Delete(int id)
         {
             GetDatabase().Delete<ReportItem>(id);
-        }
-
-        public void Update(ReportItem reportItem)
-        {
-            GetDatabase().Update(reportItem);
         }
 
     }
