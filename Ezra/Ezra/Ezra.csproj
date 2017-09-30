@@ -44,7 +44,8 @@
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\WeekSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\StatisticsUtils.cs" />
+    <Compile Include="Services\StatisticsService.cs" />
+    <Compile Include="Utils\ReportUtils.cs" />
     <Compile Include="ViewModels\EzraNavigationPageViewModel.cs" />
     <Compile Include="ViewModels\MainMasterDetailPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />

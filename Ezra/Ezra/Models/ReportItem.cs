@@ -1,4 +1,5 @@
-﻿using SQLite.Net.Attributes;
+﻿using Ezra.Utils;
+using SQLite.Net.Attributes;
 using System;
 
 namespace Ezra.Models
@@ -22,9 +23,7 @@ namespace Ezra.Models
         {
             get
             {
-                TimeSpan ts = new TimeSpan(this.Hours, this.Minutes, 0);
-                return string.Format("{0:00}:", (ts.Days * 24 + ts.Hours))
-                    + string.Format("{0:00}", (ts.Minutes));
+                return ReportUtils.FormatHour(this);
             }
         }
 
@@ -33,14 +32,7 @@ namespace Ezra.Models
         {
             get
             {
-                DateTime date = DateTime.Now;
-                if (this.Year != 0)
-                {
-                    date = new DateTime(this.Year, this.Month, this.Day);
-                }
-
-                string formatedDateWeek = String.Format("{0:dddd, dd}", date);
-                return formatedDateWeek.Substring(0, 1).ToUpper() + formatedDateWeek.Substring(1);
+                return ReportUtils.FormateDateWeek(this);
             }
         }
 
@@ -49,14 +41,7 @@ namespace Ezra.Models
         {
             get
             {
-                DateTime date = DateTime.Now;
-                if (this.Year != 0)
-                {
-                    date = new DateTime(this.Year, this.Month, this.Day);
-                }
-
-                string formatedMonth = String.Format("{0:MMMM}", date) + " " + date.Year.ToString();
-                return formatedMonth.Substring(0, 1).ToUpper() + formatedMonth.Substring(1);
+                return ReportUtils.FormatedDateMonth(this);
             }
         }
 
@@ -65,12 +50,7 @@ namespace Ezra.Models
         {
             get
             {
-                DateTime date = DateTime.Now;
-                if (this.Year != 0)
-                {
-                    date = new DateTime(this.Year, this.Month, this.Day);
-                }
-                return date;
+                return ReportUtils.ToDateTime(this);
             }
         }
 

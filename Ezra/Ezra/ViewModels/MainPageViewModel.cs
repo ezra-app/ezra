@@ -1,5 +1,6 @@
 ﻿using Ezra.Data;
 using Ezra.Models;
+using Ezra.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -14,7 +15,7 @@ namespace Ezra.ViewModels
     public class MainPageViewModel : BindableBase, INavigationAware
     {
         private INavigationService NavigationService { get; set; }
-        public ReportItemDatabase ReportItemDatabase { get; set; }
+        private ReportItemDatabase ReportItemDatabase { get; set; }
 
         private ReportItem reportSummary;
         public ReportItem ReportSummary
@@ -56,6 +57,27 @@ namespace Ezra.ViewModels
             }
         }
 
+        private string hoursTargetMessage;
+        public string HoursTargetMessage
+        {
+            get { return hoursTargetMessage; }
+            set { SetProperty(ref hoursTargetMessage, value); }
+        }
+
+        private string hoursLeftMessage;
+        public string HoursLeftMessage
+        {
+            get { return hoursLeftMessage; }
+            set { SetProperty(ref hoursLeftMessage, value); }
+        }
+
+        private string hoursPerDayMessage;
+        public string HoursPerDayMessage
+        {
+            get { return hoursPerDayMessage; }
+            set { SetProperty(ref hoursPerDayMessage, value); }
+        }
+
         public ICommand StartCounterCommand { get; set; }
         public ICommand AddCommand { get; set; }
         public ICommand ReportListCommand { get; set; }
@@ -70,6 +92,7 @@ namespace Ezra.ViewModels
             ReportSummary = new ReportItem();
             ReportItemDatabase = new ReportItemDatabase();
             LoadReportSummary();
+            CreateTargetMessages();
             NavigationService = navigationService;
             HandleCounterIcon();
 
@@ -140,6 +163,14 @@ namespace Ezra.ViewModels
             Title = formatedMonthTitle.Substring(0, 1).ToUpper() + formatedMonthTitle.Substring(1);
         }
 
+        public void CreateTargetMessages()
+        {
+            var statisticsService = new StatisticsService();
+            HoursLeftMessage = statisticsService.GetLeftToEndMessage(ReportSummary);
+            HoursTargetMessage = statisticsService.GetTargetMessage();
+            HoursPerDayMessage = statisticsService.GetPerDayMessage(ReportSummary);
+        }
+
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
 
@@ -147,13 +178,13 @@ namespace Ezra.ViewModels
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
-
+            LoadReportSummary();
+            CreateTargetMessages();
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (parameters.ContainsKey("title"))
-                Title = (string)parameters["title"] + " and Prism";
+
         }
     }
 }

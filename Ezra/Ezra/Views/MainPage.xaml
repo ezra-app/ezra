@@ -80,9 +80,9 @@
                     <Label Text="Minhas Metas" FontSize="Medium" TextColor="White"/>
                 </StackLayout>
                 <StackLayout Margin="10, 0, 10, 10">
-                    <Label Text="Minha Meta é 12 hrs" FontSize="Medium" HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
-                    <Label Text="Preciso de 12:00 hrs por dia" FontSize="Medium"  HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
-                    <Label Text="Faltam 12:00 para acabar" FontSize="Medium"  HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
+                    <Label Text="{Binding HoursTargetMessage}" FontSize="Medium" HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
+                    <Label Text="{Binding HoursPerDayMessage}" FontSize="Medium"  HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
+                    <Label Text="{Binding HoursLeftMessage}" FontSize="Medium"  HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

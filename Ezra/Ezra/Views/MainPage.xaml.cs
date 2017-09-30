@@ -46,7 +46,8 @@ namespace Ezra.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ViewModel.LoadReportSummary();
+            //ViewModel.LoadReportSummary();
+            //ViewModel.CreateTargetMessages();
         }
 
     }
