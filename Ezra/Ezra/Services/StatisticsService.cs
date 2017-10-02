@@ -16,35 +16,45 @@ namespace Ezra.Services
 
         public StatisticsService()
         {
+        }
+
+        public ReportStatistics Calculate(ReportItem report)
+        {
             SettingsDatabase = new SettingsDatabase();
             Settings = SettingsDatabase.GetSettings();
+            ReportStatistics statistics = new ReportStatistics();
+            statistics.ReportReference = report;
+            statistics.TimeLeftToEnd = GetTimeLeftToEnd(report);
+            statistics.TimePerDay = GetTimePerDay(report);
+            statistics.TimeTarget = GetTarget();
+            return statistics;
         }
 
-        public string GetTargetMessage()
+        private TimeSpan GetTarget()
         {
-            var target = Settings.HoursTarget;
-            return $"Minha Meta é {target} hrs";
+            return new TimeSpan(Settings.HoursTarget, 0, 0);
         }
 
-        public string GetPerDayMessage(ReportItem report)
+        private TimeSpan GetTimePerDay(ReportItem report)
         {
-            var perDayTarget = 0;
-            return $"Preciso de {perDayTarget} hrs por dia";
+            int daysLeftInMonth = DateTime.DaysInMonth(report.Year, report.Month) - DateTime.Now.Day + 1;
+            TimeSpan timeLeftToEnd = GetTimeLeftToEnd(report);
+            if (timeLeftToEnd.TotalMinutes > 0)
+            {
+                double minutesPerDay = timeLeftToEnd.TotalMinutes / daysLeftInMonth;
+                return new TimeSpan(0, Convert.ToInt16(minutesPerDay), 0);
+            }
+            else
+            {
+                return new TimeSpan(0, 0, 0);
+            }
         }
 
-        public string GetLeftToEndMessage(ReportItem report)
+        public TimeSpan GetTimeLeftToEnd(ReportItem report)
         {
             TimeSpan hoursTarget = new TimeSpan(Settings.HoursTarget, 0, 0);
             TimeSpan totalTime = ReportUtils.ToTimeSpan(report);
-            TimeSpan leftTime = hoursTarget.Subtract(totalTime);
-            if(leftTime.TotalMinutes > 0)
-            {
-                return $"Faltam {ReportUtils.FormatHour(leftTime)} para acabar";
-            } else
-            {
-                return "Você fechou as horas do mês!";
-            }
-            
+            return hoursTarget.Subtract(totalTime);
         }
     }
 }

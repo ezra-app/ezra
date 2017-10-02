@@ -1,6 +1,7 @@
 ﻿using Ezra.Data;
 using Ezra.Models;
 using Ezra.Services;
+using Ezra.Utils;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -52,8 +53,6 @@ namespace Ezra.ViewModels
             set
             {
                 SetProperty(ref dateControl, value);
-                FormatTitle();
-                LoadReportSummary();
             }
         }
 
@@ -120,11 +119,17 @@ namespace Ezra.ViewModels
         private void ForwardCommandExecute()
         {
             DateControl = DateControl.AddMonths(1);
+            FormatTitle();
+            LoadReportSummary();
+            CreateTargetMessages();
         }
 
         private void BackDateCommandExecute()
         {
             DateControl = DateControl.AddMonths(-1);
+            FormatTitle();
+            LoadReportSummary();
+            CreateTargetMessages();
         }
 
         public void ReportListCommandExecute()
@@ -165,10 +170,33 @@ namespace Ezra.ViewModels
 
         public void CreateTargetMessages()
         {
-            var statisticsService = new StatisticsService();
-            HoursLeftMessage = statisticsService.GetLeftToEndMessage(ReportSummary);
-            HoursTargetMessage = statisticsService.GetTargetMessage();
-            HoursPerDayMessage = statisticsService.GetPerDayMessage(ReportSummary);
+            var statisticsTarget = new StatisticsService().Calculate(ReportSummary);
+            if (DateControl.Month == DateTime.Now.Month)
+            {
+                HoursTargetMessage = $"Minha Meta é {ReportUtils.FormatHour(statisticsTarget.TimeTarget)} hrs";
+                if (statisticsTarget.TimeLeftToEnd.TotalMinutes > 0)
+                {
+                    HoursPerDayMessage = $"Preciso de {ReportUtils.FormatHour(statisticsTarget.TimePerDay)} hrs por dia";
+                    HoursLeftMessage = $"Faltam {ReportUtils.FormatHour(statisticsTarget.TimeLeftToEnd)} para acabar";
+                }
+                else
+                {
+                    HoursPerDayMessage = "Você fechou suas horas!";
+                    HoursLeftMessage = "";
+                }
+            }
+            else
+            {
+                HoursLeftMessage = "";
+                if (statisticsTarget.TimeLeftToEnd.TotalMinutes > 0)
+                {
+                    HoursPerDayMessage = $"Faltou {ReportUtils.FormatHour(statisticsTarget.TimeLeftToEnd)} para acabar";
+                }
+                else
+                {
+                    HoursPerDayMessage = "Você fechou suas horas!";
+                }
+            }
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -178,8 +206,6 @@ namespace Ezra.ViewModels
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
-            LoadReportSummary();
-            CreateTargetMessages();
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
