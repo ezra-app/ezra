@@ -22,7 +22,7 @@ namespace Ezra.Services
         {
             SettingsDatabase = new SettingsDatabase();
             Settings = SettingsDatabase.GetSettings();
-            if(Settings == null)
+            if (Settings == null)
             {
                 Settings = new Settings();
             }
@@ -50,8 +50,18 @@ namespace Ezra.Services
         private TimeSpan GetTimePerDay(ReportItem report)
         {
             int daysLeftInMonth = DateTime.DaysInMonth(report.Year, report.Month) - DateTime.Now.Day + 1;
+            if (Settings.GetDaysOfWeek().Count() > 0)
+            {
+                daysLeftInMonth = ReportUtils.GetEffectiveDaysInMonth(Settings.GetDaysOfWeek());
+            }
+
+            if (daysLeftInMonth <= 0)
+            {
+                daysLeftInMonth = 1;
+            }
+
             TimeSpan timeLeftToEnd = GetTimeLeftToEnd(report);
-            if (timeLeftToEnd.TotalMinutes > 0 && daysLeftInMonth> 0)
+            if (timeLeftToEnd.TotalMinutes > 0)
             {
                 double minutesPerDay = timeLeftToEnd.TotalMinutes / daysLeftInMonth;
                 return new TimeSpan(0, Convert.ToInt16(minutesPerDay), 0);

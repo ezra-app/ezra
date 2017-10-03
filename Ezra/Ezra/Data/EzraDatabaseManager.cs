@@ -18,7 +18,6 @@ namespace Ezra.Data
         {
             this.database = databaseConnection.DbConnection();
             database.CreateTable<ReportItem>();
-            database.CreateTable<WeekSettings>();
             database.CreateTable<Settings>();
         }
     }

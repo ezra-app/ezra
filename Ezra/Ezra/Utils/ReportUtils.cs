@@ -59,5 +59,22 @@ namespace Ezra.Utils
         {
             return DateTime.DaysInMonth(date.Year, date.Month);
         }
+
+        public static int GetEffectiveDaysInMonth(List<DayOfWeek> effectiveWeekDays)
+        {
+            DateTime date = DateTime.Now;
+            int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+
+            int effectiveDays = 0;
+            for (int i = DateTime.Now.Day; i <= daysInMonth; i++)
+            {
+                if (effectiveWeekDays.Contains(date.DayOfWeek))
+                {
+                    effectiveDays++;
+                }
+                date = date.AddDays(1);
+            }
+            return effectiveDays;
+        }
     }
 }

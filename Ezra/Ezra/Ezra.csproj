@@ -42,7 +42,6 @@
     <Compile Include="Data\SettingsDatabase.cs" />
     <Compile Include="Models\ReportItem.cs" />
     <Compile Include="Models\Settings.cs" />
-    <Compile Include="Models\WeekSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ReportStatistics.cs" />
     <Compile Include="Services\StatisticsService.cs" />

@@ -77,7 +77,7 @@ namespace Ezra.ViewModels
                 DateControl = ReportItem.Date;
                 Editing = true;
             }
-            if (parameters.ContainsKey("dateControl"))
+            else if (parameters.ContainsKey("dateControl"))
             {
                 DateControl = (DateTime)parameters["dateControl"];
                 Editing = false;

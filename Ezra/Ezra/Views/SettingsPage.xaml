@@ -18,6 +18,14 @@
             </TableSection> 
             <TableSection Title="Metas">
                 <EntryCell Label="Requisito de Horas" Text="{Binding Settings.HoursTarget}" Keyboard="Numeric" Height="6"/>
+                <TextCell Text="Dias de Atividade:"/>
+                <SwitchCell Text="Segunda" On="{Binding Settings.Monday}"/>
+                <SwitchCell Text="Terça" On="{Binding Settings.Tuesday}"/>
+                <SwitchCell Text="Quarta" On="{Binding Settings.Wednesday}"/>
+                <SwitchCell Text="Quinta" On="{Binding Settings.Thursday}"/>
+                <SwitchCell Text="Sexta" On="{Binding Settings.Friday}"/>
+                <SwitchCell Text="Sábado" On="{Binding Settings.Saturday}"/>
+                <SwitchCell Text="Domingo" On="{Binding Settings.Sunday}"/>
             </TableSection>
         </TableRoot>
     </TableView>

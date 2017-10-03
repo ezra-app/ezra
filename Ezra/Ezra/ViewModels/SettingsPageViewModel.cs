@@ -34,7 +34,6 @@ namespace Ezra.ViewModels
 
         private void SaveCommandExecute()
         {
-
             Settings currentSettings = SettingsDatabase.GetSettings();
             if (currentSettings != null)
             {
@@ -51,7 +50,7 @@ namespace Ezra.ViewModels
         private void LoadSettings()
         {
             Settings currentSettings = SettingsDatabase.GetSettings();
-            if(currentSettings != null)
+            if (currentSettings != null)
             {
                 Settings = currentSettings;
             }

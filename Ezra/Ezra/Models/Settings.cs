@@ -15,8 +15,35 @@ namespace Ezra.Models
         public string Email { get; set; }
         public string Name { get; set; }
         public int HoursTarget { get; set; }
-        [OneToOne]
-        public WeekSettings WeekSettings { get; set; }
+        public bool Sunday { get; set; }
+        public bool Monday { get; set; }
+        public bool Tuesday { get; set; }
+        public bool Wednesday { get; set; }
+        public bool Thursday { get; set; }
+        public bool Friday { get; set; }
+        public bool Saturday { get; set; }
+
+        public List<DayOfWeek> GetDaysOfWeek()
+        {
+            var daysOfWeek = new List<DayOfWeek>();
+
+            if (Sunday)
+                daysOfWeek.Add(DayOfWeek.Sunday);
+            if (Monday)
+                daysOfWeek.Add(DayOfWeek.Monday);
+            if (Tuesday)
+                daysOfWeek.Add(DayOfWeek.Tuesday);
+            if (Wednesday)
+                daysOfWeek.Add(DayOfWeek.Wednesday);
+            if (Thursday)
+                daysOfWeek.Add(DayOfWeek.Thursday);
+            if (Friday)
+                daysOfWeek.Add(DayOfWeek.Friday);
+            if (Saturday)
+                daysOfWeek.Add(DayOfWeek.Saturday);
+
+            return daysOfWeek;
+        }
     }
 
 }
