@@ -36,6 +36,7 @@ namespace Ezra.Data
             ReportItem reportSummary = new ReportItem();
             reportSummary.Month = month;
             reportSummary.Year = year;
+            reportSummary.Day = 1;
             foreach (var item in itens)
             {
                 reportSummary.Hours += item.Hours;

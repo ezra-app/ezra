@@ -66,16 +66,21 @@ namespace Ezra.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-           
+
         }
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
             if (parameters.ContainsKey("reportItem"))
             {
-                ReportItem = (ReportItem)parameters["reportItem"];
+                ReportItem = (ReportItem) parameters["reportItem"];
                 DateControl = ReportItem.Date;
                 Editing = true;
+            }
+            if (parameters.ContainsKey("dateControl"))
+            {
+                DateControl = (DateTime)parameters["dateControl"];
+                Editing = false;
             }
             else
             {

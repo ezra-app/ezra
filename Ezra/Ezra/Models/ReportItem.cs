@@ -18,6 +18,18 @@ namespace Ezra.Models
         public int Studies { get; set; }
         public int ReturnVisits { get; set; }
 
+        public ReportItem(int month, int day, int year, int minutes)
+        {
+            Month = month;
+            Day = day;
+            Year = year;
+            Minutes = minutes;
+        }
+
+        public ReportItem()
+        {
+        }
+
         [Ignore]
         public string FormatedHour
         {

@@ -11,8 +11,8 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}" Order="Primary" Priority="0"/>
         <ToolbarItem Text="Iniciar" Icon="{Binding CounterIconName}" Command="{Binding StartCounterCommand}" Order="Primary" Priority="1"/>
-        <ToolbarItem Text="Data" Icon="calendar.png" Clicked="OnDatePickerClicked" Order="Primary" Priority="2"/>
-        <ToolbarItem Text="Configurações" Icon="settings.png" Command="{Binding SettingsCommand}" Order="Secondary" Priority="1"/>
+        <!--<ToolbarItem Text="Data" Icon="calendar.png" Clicked="OnDatePickerClicked" Order="Primary" Priority="2"/> -->
+        <ToolbarItem Text="Configurações" Icon="settings.png" Command="{Binding SettingsCommand}" Priority="2"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
@@ -55,24 +55,32 @@
             <StackLayout Orientation="Horizontal" Margin="5, 0, 5, 0">
                 <iconize:IconButton WidthRequest="55" FontSize="27" 
                                     TextColor="#187288" Text="ion-chevron-left" 
-                                    HorizontalOptions="StartAndExpand" 
-                                    BorderColor="Transparent" 
-                                    BackgroundColor="White" 
-                                    Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
-                <Label Text="Contagem iniciada em:" IsVisible="{Binding CounterStarted}" 
-                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                                    HorizontalOptions="Start" BorderColor="Transparent" 
+                                    BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
+                <iconize:IconButton WidthRequest="55" FontSize="27" 
+                                    TextColor="#187288" Text="ion-calendar" 
+                                    HorizontalOptions="Start" BorderColor="Transparent" 
+                                    BackgroundColor="White" Margin="0, 0, 0, 0" Clicked="OnDatePickerClicked"/>
                 <iconize:IconButton WidthRequest="55" FontSize="27" 
                                     TextColor="#187288" Text="ion-chevron-right" 
-                                    HorizontalOptions="EndAndExpand" 
-                                    BorderColor="Transparent" 
-                                    BackgroundColor="White" 
-                                    Margin="0, 0, 0, 0" Command="{Binding ForwardDateCommand}"/>
-                <!--
+                                    HorizontalOptions="StartAndExpand" BorderColor="Transparent" 
+                                    BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding ForwardDateCommand}"/>
+
+                <iconize:IconButton WidthRequest="55" FontSize="27" 
+                                    TextColor="#187288" Text="ion-paper-airplane" 
+                                    HorizontalOptions="End" BorderColor="Transparent" 
+                                    BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding ShareCommand}"/>
+                <iconize:IconButton WidthRequest="55" FontSize="27" IsVisible="{Binding IsClosed}"
+                                    TextColor="#187288" Text="ion-arrow-swap"
+                                    HorizontalOptions="End" BorderColor="Transparent" 
+                                    BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding TransferCommand}"/>
                 <iconize:IconButton WidthRequest="55" FontSize="27" 
                                     TextColor="#187288" Text="ion-ios-list" 
-                                    HorizontalOptions="EndAndExpand" BorderColor="Transparent" 
+                                    HorizontalOptions="End" BorderColor="Transparent" 
                                     BackgroundColor="White" Margin="0, 0, 0, 0"
-                                    Command="{Binding ReportListCommand}"/>-->
+                                    Command="{Binding ReportListCommand}"/>
+                <Label Text="Contagem iniciada em:" IsVisible="{Binding CounterStarted}" 
+                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
             <StackLayout Margin="0, 0, 0, 0">
                 <StackLayout BackgroundColor="#187288" Padding="15, 15, 15, 15" Orientation="Horizontal">

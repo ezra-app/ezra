@@ -49,5 +49,15 @@ namespace Ezra.Utils
         {
             return new TimeSpan(report.Hours, report.Minutes, 0);
         }
+
+        public static int DaysInMonth(ReportItem report)
+        {
+            return DateTime.DaysInMonth(report.Year, report.Month);
+        }
+
+        public static int DaysInMonth(DateTime date)
+        {
+            return DateTime.DaysInMonth(date.Year, date.Month);
+        }
     }
 }
