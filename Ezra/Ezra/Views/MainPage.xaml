@@ -23,9 +23,9 @@
                 </DatePicker>
             </StackLayout>
             <StackLayout x:Name="reportStackLayout">
-                <StackLayout.GestureRecognizers>
+                <!--<StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                </StackLayout.GestureRecognizers>
+                </StackLayout.GestureRecognizers>-->
                 <StackLayout Orientation="Horizontal" Margin="15, 12, 15, 2">
                     <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
                     <Label Text="Horas:" FontSize="Medium" HorizontalOptions="StartAndExpand" TextColor="#187288"/>
@@ -79,8 +79,8 @@
                                     HorizontalOptions="End" BorderColor="Transparent" 
                                     BackgroundColor="White" Margin="0, 0, 0, 0"
                                     Command="{Binding ReportListCommand}"/>
-                <Label Text="Contagem iniciada em:" IsVisible="{Binding CounterStarted}" 
-                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                <!--<Label Text="Contagem iniciada em:" IsVisible="{Binding CounterStarted}" 
+                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>-->
             </StackLayout>
             <StackLayout Margin="0, 0, 0, 0">
                 <StackLayout BackgroundColor="#187288" Padding="15, 15, 15, 15" Orientation="Horizontal">
