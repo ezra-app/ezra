@@ -5,7 +5,7 @@
              xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Ezra.Views.ReportEditionPage" Title="Adicionar Relatório">
+             x:Class="Ezra.Views.ReportEditionPage" Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Icon="checkmark.png" Command="{Binding SaveCommand}"/>
@@ -13,8 +13,9 @@
 
     <ScrollView>
         <StackLayout Margin="15, 12, 15, 2">
-            <StackLayout HorizontalOptions="Center">
-                <DatePicker Date="{Binding DateControl}">
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <iconize:IconLabel FontSize="27" Text="ion-calendar" TextColor="Black" Margin="0, 15, 15, 0"/>
+                <DatePicker Date="{Binding DateControl}"  Margin="0, 15, 0, 0">
                     <DatePicker.Format>dd/MM/yyyy (dddd)</DatePicker.Format>
                     <DatePicker.MinimumDate>
                         <sys:DateTime x:FactoryMethod="Parse">
@@ -32,28 +33,43 @@
                     </DatePicker.MaximumDate>
                 </DatePicker>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Entry Text="{Binding ReportItem.Hours}" Placeholder="Horas" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
-                <Entry Text="{Binding ReportItem.Minutes}" Placeholder="Minutos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            <StackLayout Margin="5, 0, 5, 0">
+                <Label Text="Horas:" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Entry Text="{Binding ReportItem.Hours}" Placeholder="Horas" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                    <Label Text=":" FontSize="Medium"/>
+                    <Entry Text="{Binding ReportItem.Minutes}" Placeholder="Minutos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                </StackLayout>
             </StackLayout>
-            <StackLayout  Orientation="Horizontal">
-                <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Entry Text="{Binding ReportItem.Placements}" Placeholder="Publicações"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            <StackLayout Margin="5, 0, 5, 0">
+                <Label Text="Publicações:" FontAttributes="Bold"/>
+                <StackLayout  Orientation="Horizontal">
+                    <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Entry Text="{Binding ReportItem.Placements}" Placeholder="Publicações"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                </StackLayout>
             </StackLayout>
-            <StackLayout  Orientation="Horizontal">
-                <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Entry Text="{Binding ReportItem.Videos}" Placeholder="Vídeos"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            <StackLayout Margin="5, 0, 5, 0">
+                <Label Text="Vídeos:" FontAttributes="Bold"/>
+                <StackLayout  Orientation="Horizontal">
+                    <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Entry Text="{Binding ReportItem.Videos}" Placeholder="Vídeos"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                </StackLayout>
             </StackLayout>
-            <StackLayout  Orientation="Horizontal">
-                <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Entry Text="{Binding ReportItem.ReturnVisits}" Placeholder="Revisitas"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            <StackLayout Margin="5, 0, 5, 0">
+                <Label Text="Revisitas:" FontAttributes="Bold"/>
+                <StackLayout  Orientation="Horizontal">
+                    <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Entry Text="{Binding ReportItem.ReturnVisits}" Placeholder="Revisitas"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                </StackLayout>
             </StackLayout>
-            <StackLayout  Orientation="Horizontal">
-                <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
-                <Entry Text="{Binding ReportItem.Studies}" Placeholder="Estudos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+            <StackLayout Margin="5, 0, 5, 0">
+                <Label Text="Estudos:" FontAttributes="Bold"/>
+                <StackLayout  Orientation="Horizontal">
+                    <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <Entry Text="{Binding ReportItem.Studies}" Placeholder="Estudos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                </StackLayout>
             </StackLayout>
-
         </StackLayout>
     </ScrollView>
 </ContentPage>

@@ -31,6 +31,14 @@ namespace Ezra.ViewModels
             set { SetProperty(ref dateControl, value); }
         }
 
+        private string title;
+
+        public string Title
+        {
+            get { return title; }
+            set { SetProperty(ref title, value); }
+        }
+
         public ICommand SaveCommand { get; set; }
 
         public ReportEditionPageViewModel(INavigationService navigationService)
@@ -73,7 +81,7 @@ namespace Ezra.ViewModels
         {
             if (parameters.ContainsKey("reportItem"))
             {
-                ReportItem = (ReportItem) parameters["reportItem"];
+                ReportItem = (ReportItem)parameters["reportItem"];
                 DateControl = ReportItem.Date;
                 Editing = true;
             }
@@ -85,6 +93,15 @@ namespace Ezra.ViewModels
             else
             {
                 Editing = false;
+            }
+
+            if (Editing)
+            {
+                Title = "Editar Relatório";
+            }
+            else
+            {
+                Title = "Adicionar Relatório";
             }
         }
     }
