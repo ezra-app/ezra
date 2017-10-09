@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace Ezra.Models
 {
-    public class Settings
+    public class Settings : BaseModel
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
         public string Email { get; set; }
         public string Name { get; set; }
         public int HoursTarget { get; set; }
