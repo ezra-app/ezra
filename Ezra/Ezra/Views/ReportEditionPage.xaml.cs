@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace Ezra.Views
 {
@@ -11,7 +12,7 @@ namespace Ezra.Views
 
         private void OnEntryFocused(Entry sender, FocusEventArgs e)
         {
-            if(sender.Text == "0")
+            if (sender.Text == "0")
             {
                 sender.Text = "";
             }
@@ -19,9 +20,20 @@ namespace Ezra.Views
 
         private void OnEntryUnfocused(Entry sender, FocusEventArgs e)
         {
-            if(sender.Text == "")
+            if (sender.Text == "")
             {
                 sender.Text = "0";
+            }
+        }
+
+        private void OnNumericEntryTextChanged(Entry sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(sender.Text) || int.TryParse(sender.Text, out var n))
+            {
+                sender.Text = e.NewTextValue;
+            } else
+            {
+                sender.Text = e.OldTextValue;
             }
         }
     }
