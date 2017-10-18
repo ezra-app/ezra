@@ -19,6 +19,7 @@ namespace Ezra.Data
             this.database = databaseConnection.DbConnection();
             database.CreateTable<ReportItem>();
             database.CreateTable<Settings>();
+            database.CreateTable<CounterTimestamp>();
         }
     }
 }

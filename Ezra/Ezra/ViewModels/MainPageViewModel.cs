@@ -50,6 +50,17 @@ namespace Ezra.ViewModels
             set { SetProperty(ref counterStarted, value); }
         }
 
+        public CounterTimestamp CounterTimestamp { get; set; }
+
+        private String counterText;
+
+        public String CounterText
+        {
+            get { return counterText; }
+            set { SetProperty(ref counterText, value); }
+        }
+
+
         private DateTime dateControl;
         public DateTime DateControl
         {
@@ -111,6 +122,7 @@ namespace Ezra.ViewModels
             CreateTargetMessages();
             NavigationService = navigationService;
             DialogService = dialogService;
+            LoadCounter();
             HandleCounterIcon();
 
             StartCounterCommand = new DelegateCommand(StartCounterCommandExecute);
@@ -121,6 +133,23 @@ namespace Ezra.ViewModels
             SettingsCommand = new DelegateCommand(SettingsCommandExecute);
             ShareCommand = new DelegateCommand(ShareCommandExecute);
             TransferCommand = new DelegateCommand(TransferCommandExecute);
+        }
+
+        private void LoadCounter()
+        {
+            //ReportItemDatabase.GetDatabase().DeleteAll<CounterTimestamp>();
+            CounterTimestamp = ReportItemDatabase.GetDatabase().Table<CounterTimestamp>().FirstOrDefault();
+            var a = ReportItemDatabase.GetDatabase().Table<CounterTimestamp>().ToList();
+            if (CounterTimestamp != null)
+            {
+                CounterStarted = CounterTimestamp.Started;
+                CounterText = ReportUtils.FormatHour(new TimeSpan(CounterTimestamp.InitialTime.Hour, CounterTimestamp.InitialTime.Minute, 0));
+            }
+            else
+            {
+                CounterStarted = false;
+            }
+            HandleCounterIcon();
         }
 
         private async void TransferCommandExecute()
@@ -225,6 +254,41 @@ namespace Ezra.ViewModels
         {
             CounterStarted = !CounterStarted;
             HandleCounterIcon();
+            if (CounterStarted)
+            {
+                if (CounterTimestamp == null)
+                {
+                    CounterTimestamp = new CounterTimestamp { InitialTime = DateTime.Now, Started = true };
+                    ReportItemDatabase.Save(CounterTimestamp);
+                }
+                else
+                {
+                    CounterTimestamp.InitialTime = DateTime.Now;
+                    CounterTimestamp.Started = true;
+                    ReportItemDatabase.GetDatabase().Update(CounterTimestamp);
+                }
+
+                CounterText = ReportUtils.FormatHour(new TimeSpan(CounterTimestamp.InitialTime.Hour, CounterTimestamp.InitialTime.Minute, 0));
+            }
+            else
+            {
+                if (CounterTimestamp != null)
+                {
+                    DateTime inicialDate = CounterTimestamp.InitialTime;
+                    DateTime finalDate = DateTime.Now;
+                    TimeSpan finalTs = new TimeSpan(finalDate.Hour, finalDate.Minute, 0);
+                    TimeSpan inicialTs = new TimeSpan(inicialDate.Hour, inicialDate.Minute, 0);
+                    TimeSpan totalTime = finalTs.Subtract(inicialTs).Duration();
+
+                    CounterTimestamp.Started = false;
+                    ReportItemDatabase.Update(CounterTimestamp);
+
+                    var reportItem = new ReportItem(inicialDate.Month, inicialDate.Day, inicialDate.Year, Convert.ToInt16(totalTime.TotalMinutes));
+                    var navigationParams = new NavigationParameters();
+                    navigationParams.Add("reportItem", (ReportItem)reportItem);
+                    NavigationService.NavigateAsync("ReportEditionPage", navigationParams);
+                }
+            }
         }
 
         private void HandleCounterIcon()

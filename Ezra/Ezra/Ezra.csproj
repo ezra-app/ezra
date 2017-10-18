@@ -40,6 +40,8 @@
     <Compile Include="Data\IDatabaseConnection.cs" />
     <Compile Include="Data\ReportItemDatabase.cs" />
     <Compile Include="Data\SettingsDatabase.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CounterTimestamp.cs" />
     <Compile Include="Models\ReportItem.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
