@@ -63,7 +63,8 @@ namespace Ezra.ViewModels
             }
             else
             {
-                ReportItemDatabase.Save(ReportItem);
+                if(!ReportItem.IsEmpty())
+                    ReportItemDatabase.Save(ReportItem);
             }
             NavigationService.GoBackAsync();
         }

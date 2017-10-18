@@ -64,5 +64,10 @@ namespace Ezra.Models
             }
         }
 
+        public bool IsEmpty()
+        {
+            return Hours == 0 && Minutes == 0 && Placements == 0 && Videos == 0 && ReturnVisits == 0 && Studies == 0;
+        }
+
     }
 }

@@ -37,37 +37,37 @@
                 <Label Text="Horas:" FontAttributes="Bold"/>
                 <StackLayout Orientation="Horizontal">
                     <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <Entry Text="{Binding ReportItem.Hours}" Placeholder="Horas" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                    <Entry Text="{Binding ReportItem.Hours}" Placeholder="Horas" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
                     <Label Text=":" FontSize="Medium"/>
-                    <Entry Text="{Binding ReportItem.Minutes}" Placeholder="Minutos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                    <Entry Text="{Binding ReportItem.Minutes}" Placeholder="Minutos" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Publicações:" FontAttributes="Bold"/>
                 <StackLayout  Orientation="Horizontal">
                     <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <Entry Text="{Binding ReportItem.Placements}" Placeholder="Publicações"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                    <Entry Text="{Binding ReportItem.Placements}" Placeholder="Publicações" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Vídeos:" FontAttributes="Bold"/>
                 <StackLayout  Orientation="Horizontal">
                     <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <Entry Text="{Binding ReportItem.Videos}" Placeholder="Vídeos"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                    <Entry Text="{Binding ReportItem.Videos}" Placeholder="Vídeos" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Revisitas:" FontAttributes="Bold"/>
                 <StackLayout  Orientation="Horizontal">
                     <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <Entry Text="{Binding ReportItem.ReturnVisits}" Placeholder="Revisitas"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                    <Entry Text="{Binding ReportItem.ReturnVisits}" Placeholder="Revisitas" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused"  HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Estudos:" FontAttributes="Bold"/>
                 <StackLayout  Orientation="Horizontal">
                     <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <Entry Text="{Binding ReportItem.Studies}" Placeholder="Estudos" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                    <Entry Text="{Binding ReportItem.Studies}" Placeholder="Estudos" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>
