@@ -23,13 +23,20 @@ namespace Ezra.ViewModels
 
         public INavigationService NavigationService { get; }
         public ICommand SaveCommand { get; set; }
+        public ICommand AboutCommand { get; set; }
 
         public SettingsPageViewModel(INavigationService navigationService)
         {
             NavigationService = navigationService;
             SaveCommand = new DelegateCommand(SaveCommandExecute);
+            AboutCommand = new DelegateCommand(AboutCommandExecute);
             SettingsDatabase = new SettingsDatabase();
             LoadSettings();
+        }
+
+        private void AboutCommandExecute()
+        {
+            NavigationService.NavigateAsync("AboutPage");
         }
 
         private void SaveCommandExecute()

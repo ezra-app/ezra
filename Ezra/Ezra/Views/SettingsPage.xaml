@@ -10,9 +10,9 @@
         <ToolbarItem Text="Salvar" Icon="checkmark.png" Command="{Binding SaveCommand}"/>
     </ContentPage.ToolbarItems>
     
-    <TableView Intent="Settings">
+    <TableView Intent="Settings" Margin="5">
         <TableRoot>
-            <TableSection Title="Geral">
+            <TableSection Title="Perfil">
                 <EntryCell Label="Nome" Text="{Binding Settings.Name}"/>
                 <EntryCell Label="Email" Keyboard="Email" Text="{Binding Settings.Email}"/>
             </TableSection> 
@@ -26,6 +26,9 @@
                 <SwitchCell Text="Sexta" On="{Binding Settings.Friday}"/>
                 <SwitchCell Text="Sábado" On="{Binding Settings.Saturday}"/>
                 <SwitchCell Text="Domingo" On="{Binding Settings.Sunday}"/>
+            </TableSection>
+            <TableSection Title="Geral">
+                <TextCell Text="Sobre" Command="{Binding AboutCommand}"/>
             </TableSection>
         </TableRoot>
     </TableView>
