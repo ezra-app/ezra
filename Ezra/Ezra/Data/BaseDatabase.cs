@@ -19,9 +19,19 @@ namespace Ezra.Data
             GetDatabase().Insert(obj);
         }
 
+        public void SaveAll<T>(List<T> objs)
+        {
+            GetDatabase().InsertAll(objs);
+        }
+
         public void Update(object obj)
         {
             GetDatabase().Update(obj);
+        }
+
+        public List<T> ListAll<T>() where T : class
+        {
+            return GetDatabase().Table<T>().ToList();
         }
     }
 }

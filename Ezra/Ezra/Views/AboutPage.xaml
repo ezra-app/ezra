@@ -9,7 +9,7 @@
         <TableRoot>
             <TableSection>
                 <TextCell Text="Versão: 0.1.0"/>
-                <TextCell Text="Equipe" Command="{Binding ShowTeamCommand}"/>
+                <TextCell Text="Projeto" Command="{Binding ShowTeamCommand}"/>
             </TableSection>
         </TableRoot>
     </TableView>
