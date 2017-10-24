@@ -31,6 +31,7 @@ namespace Ezra
             Container.RegisterTypeForNavigation<ReportListPage, ReportListPageViewModel>();
             Container.RegisterTypeForNavigation<SettingsPage, SettingsPageViewModel>();
             Container.RegisterTypeForNavigation<AboutPage, AboutPageViewModel>();
+            Container.RegisterTypeForNavigation<BackupPage, BackupPageViewModel>();
         }
 
         public static EzraDatabaseManager DatabaseManager
