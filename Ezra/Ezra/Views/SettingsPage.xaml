@@ -29,6 +29,7 @@
             </TableSection>
             <TableSection Title="Geral">
                 <TextCell Text="Sobre" Command="{Binding AboutCommand}"/>
+                <TextCell Text="Cópia de segurança" Command="{Binding BackupCommand}"/>
             </TableSection>
         </TableRoot>
     </TableView>

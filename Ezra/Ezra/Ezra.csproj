@@ -50,6 +50,7 @@
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Utils\ReportUtils.cs" />
     <Compile Include="ViewModels\AboutPageViewModel.cs" />
+    <Compile Include="ViewModels\BackupPageViewModel.cs" />
     <Compile Include="ViewModels\EzraNavigationPageViewModel.cs" />
     <Compile Include="ViewModels\MainMasterDetailPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
@@ -58,6 +59,9 @@
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BackupPage.xaml.cs">
+      <DependentUpon>BackupPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReportEditionPage.xaml.cs">
       <DependentUpon>ReportEditionPage.xaml</DependentUpon>
@@ -182,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\AboutPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BackupPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
