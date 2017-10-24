@@ -139,11 +139,11 @@
     <Reference Include="PCLStorage.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
       <HintPath>..\..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Iconize, Version=2.0.0.29, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.Iconize.2.0.0.29-beta\lib\Xamarin.iOS10\Plugin.Iconize.dll</HintPath>
+    <Reference Include="Plugin.Iconize, Version=2.0.0.37, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Iconize.2.0.0.37-beta\lib\Xamarin.iOS10\Plugin.Iconize.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.Iconize.Ionicons, Version=2.0.0.29, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.Iconize.Ionicons.2.0.0.29-beta\lib\Xamarin.iOS10\Plugin.Iconize.Ionicons.dll</HintPath>
+    <Reference Include="Plugin.Iconize.Ionicons, Version=2.0.0.37, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Iconize.Ionicons.2.0.0.37-beta\lib\Xamarin.iOS10\Plugin.Iconize.Ionicons.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Share, Version=7.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.Share.7.0.1\lib\Xamarin.iOS10\Plugin.Share.dll</HintPath>

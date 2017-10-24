@@ -149,8 +149,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renderers\EzraIconLabelRenderer.cs" />
-    <Compile Include="Renderers\EzraIconButtonRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

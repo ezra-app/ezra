@@ -11,8 +11,8 @@
     "SQLite.Net-PCL": "3.1.1",
     "SQLiteNetExtensions": "1.3.0",
     "Unity": "4.0.1",
-    "Xam.Plugin.Iconize": "2.0.0.29-beta",
-    "Xam.Plugin.Iconize.Ionicons": "2.0.0.29-beta",
+    "Xam.Plugin.Iconize": "2.0.0.37-beta",
+    "Xam.Plugin.Iconize.Ionicons": "2.0.0.37-beta",
     "Xamarin.Forms": "2.4.0.282"
   },
   "frameworks": {
