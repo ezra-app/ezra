@@ -16,6 +16,7 @@ namespace Ezra.ViewModels
         private INavigationService NavigationService { get; set; }
         public ReportItemDatabase ReportItemDatabase { get; set; }
         public bool Editing { get; set; }
+        public bool IsProcessing { get; set; }
 
         private ReportItem reportItem;
         public ReportItem ReportItem
@@ -51,22 +52,27 @@ namespace Ezra.ViewModels
             SaveCommand = new DelegateCommand(SaveCommandExecute);
         }
 
-        private void SaveCommandExecute()
+        private async void SaveCommandExecute()
         {
-            ReportItem.Day = DateControl.Day;
-            ReportItem.Month = DateControl.Month;
-            ReportItem.Year = DateControl.Year;
+            if (!IsProcessing)
+            {
+                IsProcessing = true;
+                ReportItem.Day = DateControl.Day;
+                ReportItem.Month = DateControl.Month;
+                ReportItem.Year = DateControl.Year;
 
-            if (Editing)
-            {
-                ReportItemDatabase.Update(ReportItem);
+                if (Editing)
+                {
+                    ReportItemDatabase.Update(ReportItem);
+                }
+                else
+                {
+                    if (!ReportItem.IsEmpty())
+                        ReportItemDatabase.Save(ReportItem);
+                }
             }
-            else
-            {
-                if(!ReportItem.IsEmpty())
-                    ReportItemDatabase.Save(ReportItem);
-            }
-            NavigationService.GoBackAsync();
+            await NavigationService.GoBackAsync();
+            IsProcessing = false;
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
