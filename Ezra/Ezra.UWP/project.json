@@ -13,7 +13,7 @@
     "Unity": "4.0.1",
     "Xam.Plugin.Iconize": "2.0.0.37-beta",
     "Xam.Plugin.Iconize.Ionicons": "2.0.0.37-beta",
-    "Xamarin.Forms": "2.4.0.282"
+    "Xamarin.Forms": "2.4.0.18342"
   },
   "frameworks": {
     "uap10.0.14393": {}
