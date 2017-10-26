@@ -22,7 +22,7 @@ namespace Ezra.ViewModels
         private void ShowTeamCommandExecute()
         {
             string teamMessage = "Desenvolvedor: Humberto Machado\n\n" +
-                "Testadores:\nRaquel Machado\nRafael Marques\nHugo César\n\n" +
+                "Testadores:\nRaquel Machado\nRafael Marques\nHugo Machado\n\n" +
                 "Página do Projeto: https://github.com/linck/ezra-xamarin";
             DialogService.DisplayAlertAsync("Equipe", teamMessage, "Fechar");
         }

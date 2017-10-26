@@ -8,11 +8,11 @@
     <TableView Intent="Menu" Margin="5">
         <TableRoot>
             <TableSection Title="Backup">
-                <TextCell Text="Enviar Backup :)" Command="{Binding SendBkpCommand}"/>
+                <TextCell Text="Enviar Backup :)" Command="{Binding SendBkpCommand}" TextColor="Black"/>
             </TableSection>
             <TableSection Title="Restauração">
-                <EntryCell Text="{Binding RestoreContent}" Placeholder="Copie conteudo do bkp"/>
-                <TextCell Text="Restaurar Backup" Command="{Binding RestoreBkpCommand}"/>
+                <EntryCell Text="{Binding RestoreContent}" Placeholder="Cole aqui e conteúdo do bkp"/>
+                <TextCell Text="Restaurar Backup" Command="{Binding RestoreBkpCommand}" TextColor="Black"/>
             </TableSection>
         </TableRoot>
     </TableView>

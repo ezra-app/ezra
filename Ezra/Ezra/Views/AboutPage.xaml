@@ -8,8 +8,8 @@
     <TableView Intent="Menu" Margin="5">
         <TableRoot>
             <TableSection>
-                <TextCell Text="Versão: 0.1.0"/>
-                <TextCell Text="Projeto" Command="{Binding ShowTeamCommand}"/>
+                <TextCell Text="Versão: 0.1.0" TextColor="Black"/>
+                <TextCell Text="Projeto" Command="{Binding ShowTeamCommand}" TextColor="Black"/>
             </TableSection>
         </TableRoot>
     </TableView>

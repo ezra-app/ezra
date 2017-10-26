@@ -28,8 +28,8 @@
                 <SwitchCell Text="Domingo" On="{Binding Settings.Sunday}"/>
             </TableSection>
             <TableSection Title="Geral">
-                <TextCell Text="Sobre" Command="{Binding AboutCommand}"/>
-                <TextCell Text="Cópia de segurança" Command="{Binding BackupCommand}"/>
+                <TextCell Text="Sobre" Command="{Binding AboutCommand}" TextColor="Black"/>
+                <TextCell Text="Cópia de segurança" Command="{Binding BackupCommand}" TextColor="Black"/>
             </TableSection>
         </TableRoot>
     </TableView>
