@@ -77,6 +77,12 @@
     <Reference Include="Plugin.CurrentActivity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.FilePicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.FilePicker.1.1.0\lib\MonoAndroid10\Plugin.FilePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.FilePicker.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.FilePicker.1.1.0\lib\MonoAndroid10\Plugin.FilePicker.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Plugin.Iconize, Version=2.0.0.37, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.Iconize.2.0.0.37-beta\lib\MonoAndroid10\Plugin.Iconize.dll</HintPath>
     </Reference>

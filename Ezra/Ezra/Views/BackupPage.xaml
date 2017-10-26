@@ -8,12 +8,12 @@
     <TableView Intent="Menu" Margin="5">
         <TableRoot>
             <TableSection Title="Backup">
-                <TextCell Text="Enviar Backup :)" Command="{Binding SendBkpCommand}" TextColor="Black"/>
+                <TextCell Text="Salvar" Detail="Salva um backup" Command="{Binding SaveBkpCommand}" TextColor="Black"/>
+                <TextCell Text="Restaurar" Detail="Restaura um backup"  Command="{Binding RestoreBkpCommand}" TextColor="Black"/>
             </TableSection>
-            <TableSection Title="Restauração">
+            <!-- <TableSection Title="Restauração">
                 <EntryCell Text="{Binding RestoreContent}" Placeholder="Cole aqui e conteúdo do bkp"/>
-                <TextCell Text="Restaurar Backup" Command="{Binding RestoreBkpCommand}" TextColor="Black"/>
-            </TableSection>
+            </TableSection> -->
         </TableRoot>
     </TableView>
 

@@ -26,11 +26,29 @@ namespace Ezra.Services
 
         public void ImportDatabaseFromJson(string reportJson)
         {
-            var reportItens = JsonConvert.DeserializeObject<List<ReportItem>>(reportJson);
-            if(reportItens != null && reportItens.Count() > 0)
+            var currentReportItens = ReportItemDatabase.ListAll<ReportItem>();
+            List<ReportItem> reportItensImported = null;
+            try
             {
-                ReportItemDatabase.SaveAll<ReportItem>(reportItens);
+                reportItensImported = JsonConvert.DeserializeObject<List<ReportItem>>(reportJson);
+                if (reportItensImported != null && reportItensImported.Count() > 0)
+                {
+                    ReportItemDatabase.SaveAll<ReportItem>(reportItensImported);
+                }
             }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            if(reportItensImported != null && reportItensImported.Count() > 0)
+            {
+                foreach (var item in currentReportItens)
+                {
+                    ReportItemDatabase.Delete(item.Id);
+                }
+            }
+           
         }
 
         public async void BackupInFile()
