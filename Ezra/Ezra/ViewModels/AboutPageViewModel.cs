@@ -8,14 +8,12 @@ using System.Windows.Input;
 
 namespace Ezra.ViewModels
 {
-	public class AboutPageViewModel : BindableBase
+	public class AboutPageViewModel : BaseViewModel
 	{
-        private IPageDialogService DialogService { get; set; }
         public ICommand ShowTeamCommand { get; set; }
 
-        public AboutPageViewModel(IPageDialogService dialogService)
+        public AboutPageViewModel(IPageDialogService dialogService) : base(dialogService)
         {
-            DialogService = dialogService;
             ShowTeamCommand = new DelegateCommand(ShowTeamCommandExecute);
         }
 

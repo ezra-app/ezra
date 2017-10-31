@@ -13,10 +13,8 @@ using Xamarin.Forms;
 
 namespace Ezra.ViewModels
 {
-    public class ReportListPageViewModel : BindableBase, INavigationAware
+    public class ReportListPageViewModel : BaseViewModel
     {
-        private INavigationService NavigationService { get; set; }
-        private IPageDialogService DialogService { get; set; }
         public ObservableCollection<ReportItem> ReportItems { get; set; }
         public ReportItemDatabase ReportItemDatabase { get; set; }
 
@@ -31,22 +29,14 @@ namespace Ezra.ViewModels
             }
         }
 
-        private string title;
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
-
         public ICommand EditCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
         public ICommand AddCommand { get; set; }
 
 
-        public ReportListPageViewModel(INavigationService navigationService, IPageDialogService dialogService)
+        public ReportListPageViewModel(INavigationService navigationService, 
+            IPageDialogService dialogService) : base(navigationService, dialogService)
         {
-            NavigationService = navigationService;
-            DialogService = dialogService;
             FormatTitle();
             ReportItems = new ObservableCollection<ReportItem>();
             ReportItemDatabase = new ReportItemDatabase();
@@ -93,15 +83,7 @@ namespace Ezra.ViewModels
             Title = formatedMonthTitle.Substring(0, 1).ToUpper() + formatedMonthTitle.Substring(1);
         }
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-        }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-        }
-
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public override void OnNavigatingTo(NavigationParameters parameters)
         {
             if (parameters.ContainsKey("dateControl"))
             {
@@ -111,7 +93,6 @@ namespace Ezra.ViewModels
             Load();
         }
     }
-
 
     public class SourceMock
     {

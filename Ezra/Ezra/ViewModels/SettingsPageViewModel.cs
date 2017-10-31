@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Ezra.ViewModels
 {
-    public class SettingsPageViewModel : BindableBase
+    public class SettingsPageViewModel : BaseViewModel
     {
         private Settings settings = new Settings();
         public Settings Settings
@@ -20,15 +20,12 @@ namespace Ezra.ViewModels
         }
 
         public SettingsDatabase SettingsDatabase { get; set; }
-
-        public INavigationService NavigationService { get; }
         public ICommand SaveCommand { get; set; }
         public ICommand AboutCommand { get; set; }
         public ICommand BackupCommand { get; set; }
 
-        public SettingsPageViewModel(INavigationService navigationService)
+        public SettingsPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            NavigationService = navigationService;
             SaveCommand = new DelegateCommand(SaveCommandExecute);
             AboutCommand = new DelegateCommand(AboutCommandExecute);
             BackupCommand = new DelegateCommand(BackupCommandExecute);

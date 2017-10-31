@@ -16,10 +16,8 @@ using Xamarin.Forms;
 
 namespace Ezra.ViewModels
 {
-    public class MainPageViewModel : BindableBase, INavigationAware
+    public class MainPageViewModel : BaseViewModel
     {
-        private INavigationService NavigationService { get; set; }
-        private IPageDialogService DialogService { get; set; }
         private ReportItemDatabase ReportItemDatabase { get; set; }
 
         private ReportItem reportSummary;
@@ -27,13 +25,6 @@ namespace Ezra.ViewModels
         {
             get { return reportSummary; }
             set { SetProperty(ref reportSummary, value); }
-        }
-
-        private string title;
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
         }
 
         private string counterIconName;
@@ -53,13 +44,11 @@ namespace Ezra.ViewModels
         public CounterTimestamp CounterTimestamp { get; set; }
 
         private String counterText;
-
         public String CounterText
         {
             get { return counterText; }
             set { SetProperty(ref counterText, value); }
         }
-
 
         private DateTime dateControl;
         public DateTime DateControl
@@ -94,13 +83,11 @@ namespace Ezra.ViewModels
         }
 
         private bool isClosed;
-
         public bool IsClosed
         {
             get { return isClosed; }
             set { SetProperty(ref isClosed, value); }
         }
-
 
         public ICommand StartCounterCommand { get; set; }
         public ICommand AddCommand { get; set; }
@@ -111,7 +98,8 @@ namespace Ezra.ViewModels
         public ICommand ShareCommand { get; set; }
         public ICommand TransferCommand { get; set; }
 
-        public MainPageViewModel(INavigationService navigationService, IPageDialogService dialogService)
+        public MainPageViewModel(INavigationService navigationService, 
+            IPageDialogService dialogService) : base(navigationService, dialogService)
         {
             DateControl = DateTime.Now;
             VerifyIfIsClosed();
@@ -120,8 +108,6 @@ namespace Ezra.ViewModels
             ReportItemDatabase = new ReportItemDatabase();
             LoadReportSummary();
             CreateTargetMessages();
-            NavigationService = navigationService;
-            DialogService = dialogService;
             LoadCounter();
             HandleCounterIcon();
 
@@ -344,20 +330,6 @@ namespace Ezra.ViewModels
         {
             var now = DateTime.Now;
             IsClosed = DateControl.Year != now.Year || DateControl.Month != now.Month;
-        }
-
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-
-        }
-
-        public void OnNavigatingTo(NavigationParameters parameters)
-        {
-        }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-
         }
     }
 }

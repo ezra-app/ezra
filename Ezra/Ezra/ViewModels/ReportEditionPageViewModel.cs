@@ -11,9 +11,8 @@ using Xamarin.Forms;
 
 namespace Ezra.ViewModels
 {
-    public class ReportEditionPageViewModel : BindableBase, INavigationAware
+    public class ReportEditionPageViewModel : BaseViewModel
     {
-        private INavigationService NavigationService { get; set; }
         public ReportItemDatabase ReportItemDatabase { get; set; }
         public bool Editing { get; set; }
         public bool IsProcessing { get; set; }
@@ -32,19 +31,10 @@ namespace Ezra.ViewModels
             set { SetProperty(ref dateControl, value); }
         }
 
-        private string title;
-
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
-
         public ICommand SaveCommand { get; set; }
 
-        public ReportEditionPageViewModel(INavigationService navigationService)
+        public ReportEditionPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            NavigationService = navigationService;
             ReportItemDatabase = new ReportItemDatabase();
             ReportItem = new ReportItem();
             DateControl = DateTime.Now;
@@ -75,16 +65,7 @@ namespace Ezra.ViewModels
             IsProcessing = false;
         }
 
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-        }
-
-        public void OnNavigatedTo(NavigationParameters parameters)
-        {
-
-        }
-
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public override void OnNavigatingTo(NavigationParameters parameters)
         {
             if (parameters.ContainsKey("reportItem"))
             {

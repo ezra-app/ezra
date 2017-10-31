@@ -12,9 +12,8 @@ using System.Windows.Input;
 
 namespace Ezra.ViewModels
 {
-    public class BackupPageViewModel : BindableBase
+    public class BackupPageViewModel : BaseViewModel
     {
-        private IPageDialogService DialogService { get; set; }
         public ICommand SaveBkpCommand { get; set; }
         public ICommand RestoreBkpCommand { get; set; }
         public BackupService BackupService { get; set; }
@@ -26,9 +25,8 @@ namespace Ezra.ViewModels
         }
 
 
-        public BackupPageViewModel(IPageDialogService dialogService)
+        public BackupPageViewModel(IPageDialogService dialogService) : base(dialogService)
         {
-            DialogService = dialogService;
             SaveBkpCommand = new DelegateCommand(SaveBkpCommandExecute);
             RestoreBkpCommand = new DelegateCommand(RestoreBkpCommandExecute);
             BackupService = new BackupService();
