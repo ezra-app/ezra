@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ezra.Services
+namespace Ezra.Models
 {
-    public class StatisticsService
+    public class MonthlyStatisticsService
     {
         private SettingsDatabase SettingsDatabase { get; set; }
         private Settings Settings { get; set; }
 
-        public StatisticsService()
+        public MonthlyStatisticsService()
         {
         }
 

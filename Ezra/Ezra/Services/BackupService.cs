@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ezra.Services
+namespace Ezra.Models
 {
     public class BackupService
     {

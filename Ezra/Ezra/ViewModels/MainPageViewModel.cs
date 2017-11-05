@@ -1,6 +1,6 @@
 ﻿using Ezra.Data;
 using Ezra.Models;
-using Ezra.Services;
+using Ezra.Models;
 using Ezra.Utils;
 using Plugin.Share;
 using Plugin.Share.Abstractions;
@@ -297,7 +297,7 @@ namespace Ezra.ViewModels
 
         public void CreateTargetMessages()
         {
-            var statisticsTarget = new StatisticsService().Calculate(ReportSummary);
+            var statisticsTarget = new MonthlyStatisticsService().Calculate(ReportSummary);
             if (!IsClosed)
             {
                 HoursTargetMessage = $"Minha Meta é {ReportUtils.FormatHour(statisticsTarget.TimeTarget)} hrs";

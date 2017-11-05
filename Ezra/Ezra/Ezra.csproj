@@ -46,8 +46,8 @@
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BackupService.cs" />
-    <Compile Include="Services\ReportStatistics.cs" />
-    <Compile Include="Services\StatisticsService.cs" />
+    <Compile Include="Models\ReportStatistics.cs" />
+    <Compile Include="Services\MonthlyStatisticsService.cs" />
     <Compile Include="Utils\ReportUtils.cs" />
     <Compile Include="ViewModels\AboutPageViewModel.cs" />
     <Compile Include="ViewModels\BackupPageViewModel.cs" />
