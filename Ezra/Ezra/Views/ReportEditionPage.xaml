@@ -35,7 +35,7 @@
             </StackLayout>
             <StackLayout Margin="15, 0, 5, 0">
                 <Label Text="Horas:" FontAttributes="Bold"/>
-                <StackLayout Orientation="Horizontal" Padding="50, 0, 50, 0">
+                <StackLayout Orientation="Horizontal" Padding="20, 0, 20, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
                     <Entry Text="{Binding ReportItem.Hours}" Placeholder="Horas" HorizontalTextAlignment="Center" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
                     <Label Text=":" FontSize="Medium"/>
@@ -44,65 +44,65 @@
             </StackLayout>
             <StackLayout Margin="15, 0, 5, 0">
                 <Label Text="Publicações:" FontAttributes="Bold"/>
-                <StackLayout  Orientation="Horizontal" Padding="50, 0, 50, 0">
+                <StackLayout  Orientation="Horizontal" Padding="20, 0, 20, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <iconize:IconButton FontSize="22" TextColor="#187288" Clicked="OnPlacementsMinusClicked"
+                    <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnPlacementsMinusClicked"
                                         Text="ion-minus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                     <Entry x:Name="PlacementsEntry" Text="{Binding ReportItem.Placements}" Placeholder="Publicações" 
                            Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalTextAlignment="Center"
                            TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" 
                            Keyboard="Numeric" PlaceholderColor="#187288"/>
-                    <iconize:IconButton FontSize="22" TextColor="#187288" Clicked="OnPlacementsPlusClicked"
+                    <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnPlacementsPlusClicked"
                                         Text="ion-plus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Margin="15, 0, 5, 0">
                 <Label Text="Vídeos:" FontAttributes="Bold"/>
-                <StackLayout  Orientation="Horizontal" Padding="50, 0, 50, 0">
+                <StackLayout  Orientation="Horizontal" Padding="20, 0, 20, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <iconize:IconButton FontSize="22" TextColor="#187288" Clicked="OnVideosMinusClicked"
+                    <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnVideosMinusClicked"
                                         Text="ion-minus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                     <Entry x:Name="VideosEntry" Text="{Binding ReportItem.Videos}" Placeholder="Vídeos" 
                            Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalTextAlignment="Center"
                            TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" 
                            Keyboard="Numeric" PlaceholderColor="#187288"/>
-                    <iconize:IconButton FontSize="22" TextColor="#187288" Clicked="OnVideosPlusClicked"
+                    <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnVideosPlusClicked"
                                         Text="ion-plus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Margin="15, 0, 5, 0">
                 <Label Text="Revisitas:" FontAttributes="Bold"/>
-                <StackLayout  Orientation="Horizontal" Padding="50, 0, 50, 0">
+                <StackLayout  Orientation="Horizontal" Padding="20, 0, 20, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <iconize:IconButton FontSize="22" TextColor="#187288" Clicked="OnReturnVisitsMinusClicked"
+                    <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnReturnVisitsMinusClicked"
                                         Text="ion-minus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                     <Entry x:Name="ReturnVisitsEntry" Text="{Binding ReportItem.ReturnVisits}" Placeholder="Revisitas" 
                            Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" 
                            TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" 
                            Keyboard="Numeric" PlaceholderColor="#187288" HorizontalTextAlignment="Center"/>
-                    <iconize:IconButton FontSize="22" TextColor="#187288" Clicked="OnReturnVisitsPlusClicked"
+                    <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnReturnVisitsPlusClicked"
                                         Text="ion-plus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Margin="15, 0, 5, 0">
                 <Label Text="Estudos:" FontAttributes="Bold"/>
-                <StackLayout  Orientation="Horizontal" Padding="50, 0, 50, 0">
-                    <iconize:IconLabel FontSize="27" Text="ion-university" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <iconize:IconButton FontSize="22" TextColor="#187288" Clicked="OnStudiesMinusClicked"
+                <StackLayout  Orientation="Horizontal" Padding="20, 0, 20, 0">
+                    <iconize:IconLabel FontSize="27" Text="ion-university" HorizontalOptions="Start" TextColor="Black" Margin="0, 0, 15, 0"/>
+                    <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnStudiesMinusClicked"
                                         Text="ion-minus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                     <Entry x:Name="StudiesEntry" Text="{Binding ReportItem.Studies}" Placeholder="Estudos" 
                            Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalTextAlignment="Center"
                            TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" 
                            Keyboard="Numeric" PlaceholderColor="#187288"/>
-                    <iconize:IconButton FontSize="22" TextColor="#187288" Clicked="OnStudiesPlusClicked"
-                                        Text="ion-plus-round" HorizontalOptions="Start" BorderColor="Gray"
+                    <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnStudiesPlusClicked"
+                                        Text="ion-plus-round" HorizontalOptions="End" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                 </StackLayout>
             </StackLayout>
