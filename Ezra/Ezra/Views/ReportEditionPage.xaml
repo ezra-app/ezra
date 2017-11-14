@@ -13,7 +13,6 @@
 
     <ScrollView>
         <StackLayout Margin="15, 12, 15, 2">
-            <Label Text="Data:" FontAttributes="Bold" Margin="5, 0, 0, -5"/>
             <StackLayout Margin="15, 0, 5, 0" Orientation="Horizontal" HorizontalOptions="Center">
                 <iconize:IconLabel FontSize="27" Text="ion-calendar" TextColor="Black" Margin="0, 15, 15, 0"/>
                 <DatePicker Date="{Binding DateControl}"  Margin="0, 15, 0, 0">
