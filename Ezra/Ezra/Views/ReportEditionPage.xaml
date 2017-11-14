@@ -13,7 +13,8 @@
 
     <ScrollView>
         <StackLayout Margin="15, 12, 15, 2">
-            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+            <Label Text="Data:" FontAttributes="Bold" Margin="5, 0, 0, -5"/>
+            <StackLayout Margin="15, 0, 5, 0" Orientation="Horizontal" HorizontalOptions="Center">
                 <iconize:IconLabel FontSize="27" Text="ion-calendar" TextColor="Black" Margin="0, 15, 15, 0"/>
                 <DatePicker Date="{Binding DateControl}"  Margin="0, 15, 0, 0">
                     <DatePicker.Format>dd/MM/yyyy (dddd)</DatePicker.Format>
@@ -33,18 +34,26 @@
                     </DatePicker.MaximumDate>
                 </DatePicker>
             </StackLayout>
-            <StackLayout Margin="15, 0, 5, 0">
+            <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Horas:" FontAttributes="Bold"/>
-                <StackLayout Orientation="Horizontal" Padding="20, 0, 20, 0">
+                <StackLayout Orientation="Horizontal" Padding="10, 0, 10, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-clock" TextColor="Black" Margin="0, 0, 15, 0"/>
-                    <Entry Text="{Binding ReportItem.Hours}" Placeholder="Horas" HorizontalTextAlignment="Center" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                    <Entry Text="{Binding ReportItem.Hours}" Placeholder="Horas" 
+                           HorizontalTextAlignment="Center" Focused="OnEntryFocused" 
+                           Unfocused="OnEntryUnfocused" TextChanged="OnNumericEntryTextChanged" 
+                           HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"
+                            FontSize="22" TextColor="#187288"/>
                     <Label Text=":" FontSize="Medium"/>
-                        <Entry Text="{Binding ReportItem.Minutes}" Placeholder="Minutos" HorizontalTextAlignment="Center" Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288"/>
+                        <Entry Text="{Binding ReportItem.Minutes}" Placeholder="Minutos" 
+                               HorizontalTextAlignment="Center" Focused="OnEntryFocused" 
+                               Unfocused="OnEntryUnfocused" TextChanged="OnNumericEntryTextChanged" 
+                               HorizontalOptions="FillAndExpand" Keyboard="Numeric" PlaceholderColor="#187288" 
+                               FontSize="22" TextColor="#187288"/>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Margin="15, 0, 5, 0">
+            <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Publicações:" FontAttributes="Bold"/>
-                <StackLayout  Orientation="Horizontal" Padding="20, 0, 20, 0">
+                <StackLayout  Orientation="Horizontal" Padding="10, 0, 10, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-ios-bookmarks" TextColor="Black" Margin="0, 0, 15, 0"/>
                     <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnPlacementsMinusClicked"
                                         Text="ion-minus-round" HorizontalOptions="Start" BorderColor="Gray"
@@ -52,15 +61,15 @@
                     <Entry x:Name="PlacementsEntry" Text="{Binding ReportItem.Placements}" Placeholder="Publicações" 
                            Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalTextAlignment="Center"
                            TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" 
-                           Keyboard="Numeric" PlaceholderColor="#187288"/>
+                           Keyboard="Numeric" PlaceholderColor="#187288" FontSize="22" TextColor="#187288"/>
                     <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnPlacementsPlusClicked"
                                         Text="ion-plus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Margin="15, 0, 5, 0">
+            <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Vídeos:" FontAttributes="Bold"/>
-                <StackLayout  Orientation="Horizontal" Padding="20, 0, 20, 0">
+                <StackLayout  Orientation="Horizontal" Padding="10, 0, 10, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-ios-videocam" TextColor="Black" Margin="0, 0, 15, 0"/>
                     <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnVideosMinusClicked"
                                         Text="ion-minus-round" HorizontalOptions="Start" BorderColor="Gray"
@@ -68,31 +77,31 @@
                     <Entry x:Name="VideosEntry" Text="{Binding ReportItem.Videos}" Placeholder="Vídeos" 
                            Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalTextAlignment="Center"
                            TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" 
-                           Keyboard="Numeric" PlaceholderColor="#187288"/>
+                           Keyboard="Numeric" PlaceholderColor="#187288" FontSize="22" TextColor="#187288"/>
                     <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnVideosPlusClicked"
                                         Text="ion-plus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Margin="15, 0, 5, 0">
+            <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Revisitas:" FontAttributes="Bold"/>
-                <StackLayout  Orientation="Horizontal" Padding="20, 0, 20, 0">
+                <StackLayout  Orientation="Horizontal" Padding="10, 0, 10, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-person" TextColor="Black" Margin="0, 0, 15, 0"/>
                     <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnReturnVisitsMinusClicked"
                                         Text="ion-minus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                     <Entry x:Name="ReturnVisitsEntry" Text="{Binding ReportItem.ReturnVisits}" Placeholder="Revisitas" 
-                           Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" 
+                           Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalTextAlignment="Center"
                            TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" 
-                           Keyboard="Numeric" PlaceholderColor="#187288" HorizontalTextAlignment="Center"/>
+                           Keyboard="Numeric" PlaceholderColor="#187288" FontSize="22" TextColor="#187288"/>
                     <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnReturnVisitsPlusClicked"
                                         Text="ion-plus-round" HorizontalOptions="Start" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Margin="15, 0, 5, 0">
+            <StackLayout Margin="5, 0, 5, 0">
                 <Label Text="Estudos:" FontAttributes="Bold"/>
-                <StackLayout  Orientation="Horizontal" Padding="20, 0, 20, 0">
+                <StackLayout  Orientation="Horizontal" Padding="10, 0, 10, 0">
                     <iconize:IconLabel FontSize="27" Text="ion-university" HorizontalOptions="Start" TextColor="Black" Margin="0, 0, 15, 0"/>
                     <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnStudiesMinusClicked"
                                         Text="ion-minus-round" HorizontalOptions="Start" BorderColor="Gray"
@@ -100,7 +109,7 @@
                     <Entry x:Name="StudiesEntry" Text="{Binding ReportItem.Studies}" Placeholder="Estudos" 
                            Focused="OnEntryFocused" Unfocused="OnEntryUnfocused" HorizontalTextAlignment="Center"
                            TextChanged="OnNumericEntryTextChanged" HorizontalOptions="FillAndExpand" 
-                           Keyboard="Numeric" PlaceholderColor="#187288"/>
+                           Keyboard="Numeric" PlaceholderColor="#187288" FontSize="22" TextColor="#187288"/>
                     <iconize:IconButton WidthRequest="55" FontSize="22" TextColor="#187288" Clicked="OnStudiesPlusClicked"
                                         Text="ion-plus-round" HorizontalOptions="End" BorderColor="Gray"
                                         BackgroundColor="White" Margin="0, 0, 0, 0" Command="{Binding BackDateCommand}"/>
