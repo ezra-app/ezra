@@ -28,7 +28,7 @@ namespace Ezra.Views
 
         private void OnNumericEntryTextChanged(Entry sender, TextChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(sender.Text) || int.TryParse(sender.Text, out var n))
+           if (string.IsNullOrEmpty(sender.Text) || int.TryParse(sender.Text, out int n))
             {
                 sender.Text = e.NewTextValue;
             }
@@ -86,7 +86,11 @@ namespace Ezra.Views
                 valueText = "0";
             }
 
-            entry.Text = (Convert.ToInt16(valueText) + 1).ToString();
+            var nextValue = Convert.ToInt32(valueText) + 1;
+            if (int.TryParse(nextValue.ToString(), out var n))
+            {
+                entry.Text = nextValue.ToString();
+            }
         }
 
         private void MinusButtonHandler(Entry entry)
@@ -96,10 +100,10 @@ namespace Ezra.Views
             {
                 valueText = "0";
             }
-            var valueInt = Convert.ToInt16(valueText);
+            var valueInt = Convert.ToInt32(valueText);
             if (valueInt > 0)
             {
-                entry.Text = (Convert.ToInt16(valueText) - 1).ToString();
+                entry.Text = (valueInt - 1).ToString();
             }
         }
     }
