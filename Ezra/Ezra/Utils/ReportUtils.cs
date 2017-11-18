@@ -15,11 +15,16 @@ namespace Ezra.Utils
         }
 
 
-        public static string FormatHour(TimeSpan ts)
+        public static string FormatHourToCouter(TimeSpan ts)
         {
             return ts.Duration().ToString(@"hh\:mm");
         }
 
+        public static string FormatHour(TimeSpan ts)
+        {
+            return string.Format("{0:00}:", (ts.Days * 24 + ts.Hours))
+               + string.Format("{0:00}", (ts.Minutes));
+        }
         public static string FormateDateWeek(ReportItem report)
         {
             DateTime date = ToDateTime(report);
