@@ -8,7 +8,7 @@ namespace Ezra.Models
 {
     public class CounterTimestamp : BaseModel
     {
-        public DateTime InitialTime { get; set; }
+        public long InitialTimestamp { get; set; }
         public bool Started { get; set; }
     }
 }

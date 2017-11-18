@@ -71,12 +71,15 @@ namespace Ezra.ViewModels
             {
                 ReportItem = (ReportItem)parameters["reportItem"];
                 DateControl = ReportItem.Date;
-                Editing = true;
             }
-            else if (parameters.ContainsKey("dateControl"))
+            if (parameters.ContainsKey("dateControl"))
             {
                 DateControl = (DateTime)parameters["dateControl"];
-                Editing = false;
+            }
+
+            if (parameters.ContainsKey("isEditing"))
+            {
+                Editing = (bool)parameters["isEditing"];
             }
             else
             {

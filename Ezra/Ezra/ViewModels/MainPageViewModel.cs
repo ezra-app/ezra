@@ -129,7 +129,7 @@ namespace Ezra.ViewModels
             if (CounterTimestamp != null)
             {
                 CounterStarted = CounterTimestamp.Started;
-                CounterText = ReportUtils.FormatHour(new TimeSpan(CounterTimestamp.InitialTime.Hour, CounterTimestamp.InitialTime.Minute, 0));
+                CounterText = ReportUtils.FormatHour(new TimeSpan(CounterTimestamp.InitialTimestamp));
             }
             else
             {
@@ -167,7 +167,7 @@ namespace Ezra.ViewModels
                 "\nHoras: " + ReportSummary.FormatedHour +
                 "\nPublicações: " + ReportSummary.Placements +
                 "\nVídeos: " + ReportSummary.Videos +
-                "\nRevisistas: " + ReportSummary.ReturnVisits +
+                "\nRevisitas: " + ReportSummary.ReturnVisits +
                 "\nEstudos: " + ReportSummary.Studies;
 
             CrossShare.Current.Share(new ShareMessage
@@ -244,34 +244,34 @@ namespace Ezra.ViewModels
             {
                 if (CounterTimestamp == null)
                 {
-                    CounterTimestamp = new CounterTimestamp { InitialTime = DateTime.Now, Started = true };
+                    CounterTimestamp = new CounterTimestamp { InitialTimestamp = DateTime.Now.Ticks, Started = true };
                     ReportItemDatabase.Save(CounterTimestamp);
                 }
                 else
                 {
-                    CounterTimestamp.InitialTime = DateTime.Now;
+                    CounterTimestamp.InitialTimestamp = DateTime.Now.Ticks;
                     CounterTimestamp.Started = true;
                     ReportItemDatabase.GetDatabase().Update(CounterTimestamp);
                 }
 
-                CounterText = ReportUtils.FormatHour(new TimeSpan(CounterTimestamp.InitialTime.Hour, CounterTimestamp.InitialTime.Minute, 0));
+                CounterText = ReportUtils.FormatHour(new TimeSpan(CounterTimestamp.InitialTimestamp));
             }
             else
             {
                 if (CounterTimestamp != null)
                 {
-                    DateTime inicialDate = CounterTimestamp.InitialTime;
-                    DateTime finalDate = DateTime.Now;
-                    TimeSpan finalTs = new TimeSpan(finalDate.Hour, finalDate.Minute, 0);
-                    TimeSpan inicialTs = new TimeSpan(inicialDate.Hour, inicialDate.Minute, 0);
-                    TimeSpan totalTime = finalTs.Subtract(inicialTs).Duration();
+                    var now = DateTime.Now;
+                    long inicialDate = CounterTimestamp.InitialTimestamp;
+                    long finalDate = now.Ticks;
+                    TimeSpan totalTime = new TimeSpan(finalDate - inicialDate).Duration();
 
                     CounterTimestamp.Started = false;
                     ReportItemDatabase.Update(CounterTimestamp);
 
-                    var reportItem = new ReportItem(inicialDate.Month, inicialDate.Day, inicialDate.Year, Convert.ToInt16(totalTime.TotalMinutes));
+                    var reportItem = new ReportItem(now.Month, now.Day, now.Year, totalTime.Hours, totalTime.Minutes);
                     var navigationParams = new NavigationParameters();
                     navigationParams.Add("reportItem", (ReportItem)reportItem);
+                    navigationParams.Add("isEditing", false);
                     NavigationService.NavigateAsync("ReportEditionPage", navigationParams);
                 }
             }

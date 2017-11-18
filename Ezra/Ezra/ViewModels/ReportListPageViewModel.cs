@@ -59,6 +59,7 @@ namespace Ezra.ViewModels
         {
             var navigationParams = new NavigationParameters();
             navigationParams.Add("reportItem", (ReportItem) reportItem);
+            navigationParams.Add("isEditing", true);
             NavigationService.NavigateAsync("ReportEditionPage", navigationParams);
         }
 

@@ -24,6 +24,12 @@ namespace Ezra.Models
             Minutes = minutes;
         }
 
+        public ReportItem(int month, int day, int year, int hours, int minutes) : 
+            this(month, day, year, minutes)
+        {
+            Hours = hours;
+        }
+
         public ReportItem()
         {
         }

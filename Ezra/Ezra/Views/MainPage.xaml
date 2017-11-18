@@ -10,7 +10,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}" Order="Primary" Priority="0"/>
-        <!--<ToolbarItem Text="Iniciar" Icon="{Binding CounterIconName}" Command="{Binding StartCounterCommand}" Order="Primary" Priority="1"/>-->
+        <ToolbarItem Text="Iniciar" Icon="{Binding CounterIconName}" Command="{Binding StartCounterCommand}" Order="Primary" Priority="1"/>
         <!--<ToolbarItem Text="Data" Icon="calendar.png" Clicked="OnDatePickerClicked" Order="Primary" Priority="2"/> -->
         <ToolbarItem Text="Configurações" Icon="settings.png" Command="{Binding SettingsCommand}" Priority="2"/>
     </ContentPage.ToolbarItems>
@@ -52,8 +52,8 @@
                     <Label Text="{Binding ReportSummary.Studies}" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
                 </StackLayout>
             </StackLayout>
-            <!--<Label Text="{Binding CounterText}" TextColor="#187288" FontAttributes="Bold" IsVisible="{Binding CounterStarted}" 
-                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/> -->
+            <Label Text="{Binding CounterText}" TextColor="#fa7843" FontAttributes="Bold" IsVisible="{Binding CounterStarted}" 
+                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
             <StackLayout Orientation="Horizontal" Margin="5, 0, 5, 0">
                 <iconize:IconButton WidthRequest="55" FontSize="27" 
                                     TextColor="#187288" Text="ion-chevron-left" 
