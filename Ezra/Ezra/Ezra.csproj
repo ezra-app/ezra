@@ -57,6 +57,7 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\ReportEditionPageViewModel.cs" />
     <Compile Include="ViewModels\ReportListPageViewModel.cs" />
+    <Compile Include="ViewModels\SettingsGeneralPageViewModel.cs" />
     <Compile Include="ViewModels\SettingsPageViewModel.cs" />
     <Compile Include="ViewModels\StatisticsPageViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
@@ -70,6 +71,9 @@
     </Compile>
     <Compile Include="Views\ReportListPage.xaml.cs">
       <DependentUpon>ReportListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsGeneralPage.xaml.cs">
+      <DependentUpon>SettingsGeneralPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -209,6 +213,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\StatisticsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SettingsGeneralPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

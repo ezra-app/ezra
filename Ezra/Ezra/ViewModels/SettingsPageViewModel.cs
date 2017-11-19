@@ -20,13 +20,13 @@ namespace Ezra.ViewModels
         }
 
         public SettingsDatabase SettingsDatabase { get; set; }
-        public ICommand SaveCommand { get; set; }
+        public ICommand GeneralSettingsCommand { get; set; }
         public ICommand AboutCommand { get; set; }
         public ICommand BackupCommand { get; set; }
 
         public SettingsPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            SaveCommand = new DelegateCommand(SaveCommandExecute);
+            GeneralSettingsCommand = new DelegateCommand(GeneralSettingsCommandExecute);
             AboutCommand = new DelegateCommand(AboutCommandExecute);
             BackupCommand = new DelegateCommand(BackupCommandExecute);
             SettingsDatabase = new SettingsDatabase();
@@ -43,19 +43,9 @@ namespace Ezra.ViewModels
             NavigationService.NavigateAsync("AboutPage");
         }
 
-        private void SaveCommandExecute()
+        private void GeneralSettingsCommandExecute()
         {
-            Settings currentSettings = SettingsDatabase.GetSettings();
-            if (currentSettings != null)
-            {
-                Settings.Id = currentSettings.Id;
-                SettingsDatabase.Update(Settings);
-            }
-            else
-            {
-                SettingsDatabase.Save(Settings);
-            }
-            NavigationService.GoBackAsync();
+            NavigationService.NavigateAsync("SettingsGeneralPage");
         }
 
         private void LoadSettings()

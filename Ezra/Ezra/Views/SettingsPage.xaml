@@ -6,30 +6,13 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Ezra.Views.SettingsPage"
              Title="Configurações">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Salvar" Icon="checkmark.png" Command="{Binding SaveCommand}"/>
-    </ContentPage.ToolbarItems>
-    
+
     <TableView Intent="Settings" Margin="5">
         <TableRoot>
-            <TableSection Title="Perfil">
-                <EntryCell Label="Nome" Text="{Binding Settings.Name}"/>
-                <EntryCell Label="Email" Keyboard="Email" Text="{Binding Settings.Email}"/>
-            </TableSection> 
-            <TableSection Title="Metas">
-                <EntryCell Label="Requisito de Horas" Text="{Binding Settings.HoursTarget}" Keyboard="Numeric" Height="6"/>
-                <TextCell Text="Dias de Atividade:"/>
-                <SwitchCell Text="Segunda" On="{Binding Settings.Monday}"/>
-                <SwitchCell Text="Terça" On="{Binding Settings.Tuesday}"/>
-                <SwitchCell Text="Quarta" On="{Binding Settings.Wednesday}"/>
-                <SwitchCell Text="Quinta" On="{Binding Settings.Thursday}"/>
-                <SwitchCell Text="Sexta" On="{Binding Settings.Friday}"/>
-                <SwitchCell Text="Sábado" On="{Binding Settings.Saturday}"/>
-                <SwitchCell Text="Domingo" On="{Binding Settings.Sunday}"/>
-            </TableSection>
-            <TableSection Title="Geral">
+            <TableSection Title="Configurações">
+                <TextCell Text="Configurações Gerais" Detail="Configurações de metas, dias de trabalho e outros" Command="{Binding GeneralSettingsCommand}" TextColor="Black"/>
+                <TextCell Text="Cópia de Segurança" Detail="Salve e restaure seus dados" Command="{Binding BackupCommand}" TextColor="Black"/>
                 <TextCell Text="Sobre" Command="{Binding AboutCommand}" TextColor="Black"/>
-                <TextCell Text="Cópia de segurança" Command="{Binding BackupCommand}" TextColor="Black"/>
             </TableSection>
         </TableRoot>
     </TableView>
