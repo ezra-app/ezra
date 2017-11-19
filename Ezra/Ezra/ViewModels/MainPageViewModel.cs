@@ -129,7 +129,7 @@ namespace Ezra.ViewModels
             if (CounterTimestamp != null)
             {
                 CounterStarted = CounterTimestamp.Started;
-                CounterText = ReportUtils.FormatHourToCouter(new TimeSpan(CounterTimestamp.InitialTimestamp));
+                CounterText = ReportUtils.FormatHourToCounter(new TimeSpan(CounterTimestamp.InitialTimestamp));
             }
             else
             {
@@ -254,7 +254,7 @@ namespace Ezra.ViewModels
                     ReportItemDatabase.GetDatabase().Update(CounterTimestamp);
                 }
 
-                CounterText = ReportUtils.FormatHourToCouter(new TimeSpan(CounterTimestamp.InitialTimestamp));
+                CounterText = ReportUtils.FormatHourToCounter(new TimeSpan(CounterTimestamp.InitialTimestamp));
             }
             else
             {

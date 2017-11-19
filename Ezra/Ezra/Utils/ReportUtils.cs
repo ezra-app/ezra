@@ -15,7 +15,7 @@ namespace Ezra.Utils
         }
 
 
-        public static string FormatHourToCouter(TimeSpan ts)
+        public static string FormatHourToCounter(TimeSpan ts)
         {
             return ts.Duration().ToString(@"hh\:mm");
         }
