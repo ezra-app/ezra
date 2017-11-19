@@ -52,8 +52,6 @@
                     <Label Text="{Binding ReportSummary.Studies}" FontSize="Medium"  HorizontalOptions="EndAndExpand" TextColor="#187288"/>
                 </StackLayout>
             </StackLayout>
-            <Label Text="{Binding CounterText}" TextColor="#fa7843" FontAttributes="Bold" IsVisible="{Binding CounterStarted}" 
-                       VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
             <StackLayout Orientation="Horizontal" Margin="5, 0, 5, 0">
                 <iconize:IconButton WidthRequest="55" FontSize="27" 
                                     TextColor="#187288" Text="ion-chevron-left" 
@@ -83,9 +81,22 @@
                                     Command="{Binding ReportListCommand}"/>
             </StackLayout>
             <StackLayout Margin="0, 0, 0, 0">
-                <StackLayout BackgroundColor="#187288" Padding="15, 15, 15, 15" Orientation="Horizontal">
-                    <iconize:IconLabel FontSize="27" Text="ion-ios-pulse-strong" TextColor="#fa7843" Margin="0, 0, 15, 0"/>
-                    <Label Text="Minhas Metas" FontSize="Medium" TextColor="White"/>
+                <StackLayout BackgroundColor="#187288" Orientation="Horizontal">
+                    <StackLayout Padding="15, 15, 15, 15" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                        <iconize:IconLabel FontSize="27" Text="ion-ios-pulse-strong" 
+                                           TextColor="#fa7843" Margin="0, 0, 15, 0" HorizontalOptions="StartAndExpand"/>
+                        <Label Text="Minhas Metas" FontSize="Medium" TextColor="White" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="End" BackgroundColor="#fa7843" 
+                                 Orientation="Horizontal" IsVisible="{Binding CounterStarted}">
+                        <iconize:IconLabel FontSize="27" Text="ion-ios-stopwatch-outline" 
+                                           TextColor="#187288" HorizontalOptions="Start"
+                                           VerticalOptions="Center" Margin="15, 5, 5, 0"/>
+                        <Label Text="{Binding CounterText}" TextColor="#187288" 
+                               FontAttributes="Bold" FontSize="Medium" 
+                               VerticalOptions="Center" HorizontalOptions="End"
+                               Margin="0, 0, 15, 0"/>
+                    </StackLayout>
                 </StackLayout>
                 <StackLayout Margin="10, 0, 10, 10">
                     <Label Text="{Binding HoursTargetMessage}" FontSize="Medium" HorizontalOptions="StartAndExpand" Margin="15, 12, 15, 2" TextColor="#187288"/>
