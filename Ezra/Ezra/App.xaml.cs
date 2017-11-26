@@ -3,6 +3,7 @@ using Ezra.Views;
 using Xamarin.Forms;
 using Ezra.Data;
 using Ezra.ViewModels;
+using Acr.UserDialogs;
 
 namespace Ezra
 {

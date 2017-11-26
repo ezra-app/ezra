@@ -1,4 +1,5 @@
-﻿using Ezra.Models;
+﻿using Acr.UserDialogs;
+using Ezra.Models;
 using Plugin.FilePicker;
 using Plugin.FilePicker.Abstractions;
 using Plugin.Share;
@@ -34,35 +35,22 @@ namespace Ezra.ViewModels
 
         private async void RestoreBkpCommandExecute()
         {
-            var answer = await DialogService.DisplayAlertAsync($"Gostaria de restaurar este backup?", "O processo apagará os dados atuais e restaurará o do backup", "Sim", "Não");
-            if (answer)
-            {
-                FileData fileData = null;
-                try
-                {
-                    fileData = await CrossFilePicker.Current.PickFile();
-                    if (fileData != null)
-                    {
-                        string reportJson = Encoding.UTF8.GetString(fileData.DataArray, 0, fileData.DataArray.Length);
-                        BackupService.ImportDatabaseFromJson(reportJson);
-                        await DialogService.DisplayAlertAsync("Backup", $"Backup {fileData.FileName} Restaurado", "OK");
-                    }
-                }
-                catch (Exception e)
-                {
-                    await DialogService.DisplayAlertAsync("Erro", $"Erro ao restaurar backup {fileData.FileName}", "Fechar");
-                }
-            }
-            /*
+            FileData fileData = null;
             try
             {
-                BackupService.ImportDatabaseFromJson(RestoreContent);
-                DialogService.DisplayAlertAsync("Backup", "Backup Restaurado", "OK");
-            } catch
+                fileData = await CrossFilePicker.Current.PickFile();
+                var answer = await DialogService.DisplayAlertAsync($"Gostaria de restaurar este backup?", "O processo apagará os dados atuais e restaurará o do backup", "Sim", "Não");
+                if (fileData != null && answer)
+                {
+                    string reportJson = Encoding.UTF8.GetString(fileData.DataArray, 0, fileData.DataArray.Length);
+                    BackupService.ImportDatabaseFromJson(reportJson);
+                    await DialogService.DisplayAlertAsync("Backup", $"Backup {fileData.FileName} Restaurado", "OK");
+                }
+            }
+            catch (Exception)
             {
-                DialogService.DisplayAlertAsync("Erro", "Erro ao restaurar cópia de segurança", "Fechar");
-            }*/
-
+                await DialogService.DisplayAlertAsync("Erro", $"Erro ao restaurar backup {fileData.FileName}", "Fechar");
+            }
         }
 
         private async void SaveBkpCommandExecute()

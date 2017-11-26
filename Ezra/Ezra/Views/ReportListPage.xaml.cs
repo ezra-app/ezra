@@ -16,12 +16,12 @@ namespace Ezra.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            loadingIndicator.IsRunning = true;
-            loadingIndicator.IsVisible = true;
-            await Task.Delay(200);
+            //loadingIndicator.IsRunning = true;
+            //loadingIndicator.IsVisible = true;
+            //await Task.Delay(200);
 
-            loadingIndicator.IsRunning = false;
-            loadingIndicator.IsVisible = false;
+            //loadingIndicator.IsRunning = false;
+            //loadingIndicator.IsVisible = false;
             reportListView.IsVisible = true;
         }
 

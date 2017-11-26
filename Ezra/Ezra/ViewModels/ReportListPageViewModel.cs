@@ -1,4 +1,5 @@
-﻿using Ezra.Data;
+﻿using Acr.UserDialogs;
+using Ezra.Data;
 using Ezra.Models;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -50,7 +52,7 @@ namespace Ezra.ViewModels
             var answer = await DialogService.DisplayAlertAsync($"Remover Relatório", "Gostaria realmente remover?", "Sim", "Não");
             if(answer)
             {
-                ReportItemDatabase.Delete((int)id);
+                ReportItemDatabase.Delete((int) id);
                 Load();
             }
         }
@@ -68,14 +70,18 @@ namespace Ezra.ViewModels
             NavigationService.NavigateAsync("ReportEditionPage");
         }
 
-        public void Load()
+        public async void Load()
         {
+            var dialogs = UserDialogs.Instance;
+            dialogs.ShowLoading();
+            await Task.Delay(500);
             ReportItems.Clear();
             List<ReportItem> items = ReportItemDatabase.ListReportsOrdered(DateControl.Month, DateControl.Year);
             foreach (var item in items)
             {
                 ReportItems.Add(item);
             }
+            dialogs.HideLoading();
         }
 
         private void FormatTitle()

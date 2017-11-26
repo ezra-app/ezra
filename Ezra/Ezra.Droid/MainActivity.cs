@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
+using Acr.UserDialogs;
 
 namespace Ezra.Droid
 {
@@ -24,14 +25,15 @@ namespace Ezra.Droid
             Plugin.Iconize.Iconize
                       .With(new Plugin.Iconize.Fonts.IoniconsModule());*/
 
- /*           if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
-            {
-                // Do something for lollipop and above versions
-            }
-            else
-            {
-                // do something for phones running an SDK before lollipop
-            }*/
+            /*           if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
+                       {
+                           // Do something for lollipop and above versions
+                       }
+                       else
+                       {
+                           // do something for phones running an SDK before lollipop
+                       }*/
+            UserDialogs.Init(() => this);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(200, 19, 91, 108));
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
