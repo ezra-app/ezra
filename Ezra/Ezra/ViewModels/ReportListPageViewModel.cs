@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using Ezra.Data;
 using Ezra.Models;
+using Ezra.Utils;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -60,14 +61,14 @@ namespace Ezra.ViewModels
         private void EditCommandExecute(object reportItem)
         {
             var navigationParams = new NavigationParameters();
-            navigationParams.Add("reportItem", (ReportItem) reportItem);
-            navigationParams.Add("isEditing", true);
-            NavigationService.NavigateAsync("ReportEditionPage", navigationParams);
+            navigationParams.Add(EzraConstants.REPORT_ITEM_NAV_PARAM, (ReportItem) reportItem);
+            navigationParams.Add(EzraConstants.IS_EDITING_NAV_PARAM, true);
+            NavigationService.NavigateAsync(EzraConstants.REPORT_EDITION_PAGE, navigationParams);
         }
 
         private void AddCommandExecute()
         {
-            NavigationService.NavigateAsync("ReportEditionPage");
+            NavigationService.NavigateAsync(EzraConstants.REPORT_EDITION_PAGE);
         }
 
         public async void Load()
@@ -92,9 +93,9 @@ namespace Ezra.ViewModels
 
         public override void OnNavigatingTo(NavigationParameters parameters)
         {
-            if (parameters.ContainsKey("dateControl"))
+            if (parameters.ContainsKey(EzraConstants.DATE_CONTROL_NAV_PARAM))
             {
-                DateControl = (DateTime)parameters["dateControl"];
+                DateControl = (DateTime)parameters[EzraConstants.DATE_CONTROL_NAV_PARAM];
             }
             FormatTitle();
             Load();

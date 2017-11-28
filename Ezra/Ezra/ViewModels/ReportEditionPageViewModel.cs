@@ -1,5 +1,6 @@
 ﻿using Ezra.Data;
 using Ezra.Models;
+using Ezra.Utils;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -67,19 +68,19 @@ namespace Ezra.ViewModels
 
         public override void OnNavigatingTo(NavigationParameters parameters)
         {
-            if (parameters.ContainsKey("reportItem"))
+            if (parameters.ContainsKey(EzraConstants.REPORT_ITEM_NAV_PARAM))
             {
-                ReportItem = (ReportItem)parameters["reportItem"];
+                ReportItem = (ReportItem)parameters[EzraConstants.REPORT_ITEM_NAV_PARAM];
                 DateControl = ReportItem.Date;
             }
-            if (parameters.ContainsKey("dateControl"))
+            if (parameters.ContainsKey(EzraConstants.DATE_CONTROL_NAV_PARAM))
             {
-                DateControl = (DateTime)parameters["dateControl"];
+                DateControl = (DateTime)parameters[EzraConstants.DATE_CONTROL_NAV_PARAM];
             }
 
-            if (parameters.ContainsKey("isEditing"))
+            if (parameters.ContainsKey(EzraConstants.IS_EDITING_NAV_PARAM))
             {
-                Editing = (bool)parameters["isEditing"];
+                Editing = (bool)parameters[EzraConstants.IS_EDITING_NAV_PARAM];
             }
             else
             {

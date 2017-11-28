@@ -48,6 +48,7 @@
     <Compile Include="Services\BackupService.cs" />
     <Compile Include="Models\ReportStatistics.cs" />
     <Compile Include="Services\MonthlyStatisticsService.cs" />
+    <Compile Include="Utils\EzraConstants.cs" />
     <Compile Include="Utils\ReportUtils.cs" />
     <Compile Include="ViewModels\AboutPageViewModel.cs" />
     <Compile Include="ViewModels\BackupPageViewModel.cs" />

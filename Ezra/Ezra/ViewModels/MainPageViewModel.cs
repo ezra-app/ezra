@@ -98,7 +98,7 @@ namespace Ezra.ViewModels
         public ICommand ShareCommand { get; set; }
         public ICommand TransferCommand { get; set; }
 
-        public MainPageViewModel(INavigationService navigationService, 
+        public MainPageViewModel(INavigationService navigationService,
             IPageDialogService dialogService) : base(navigationService, dialogService)
         {
             DateControl = DateTime.Now;
@@ -225,15 +225,15 @@ namespace Ezra.ViewModels
         public void ReportListCommandExecute()
         {
             var navigationParams = new NavigationParameters();
-            navigationParams.Add("dateControl", DateControl);
-            NavigationService.NavigateAsync("ReportListPage", navigationParams);
+            navigationParams.Add(EzraConstants.DATE_CONTROL_NAV_PARAM, DateControl);
+            NavigationService.NavigateAsync(EzraConstants.REPORT_LIST_PAGE, navigationParams);
         }
 
         private void AddCommandExecute()
         {
             var navigationParams = new NavigationParameters();
-            navigationParams.Add("dateControl", (DateTime)DateControl);
-            NavigationService.NavigateAsync("ReportEditionPage", navigationParams);
+            navigationParams.Add(EzraConstants.DATE_CONTROL_NAV_PARAM, (DateTime)DateControl);
+            NavigationService.NavigateAsync(EzraConstants.REPORT_EDITION_PAGE, navigationParams);
         }
 
         private void StartCounterCommandExecute()
@@ -270,9 +270,9 @@ namespace Ezra.ViewModels
 
                     var reportItem = new ReportItem(now.Month, now.Day, now.Year, totalTime.Hours, totalTime.Minutes);
                     var navigationParams = new NavigationParameters();
-                    navigationParams.Add("reportItem", (ReportItem)reportItem);
-                    navigationParams.Add("isEditing", false);
-                    NavigationService.NavigateAsync("ReportEditionPage", navigationParams);
+                    navigationParams.Add(EzraConstants.REPORT_ITEM_NAV_PARAM, (ReportItem)reportItem);
+                    navigationParams.Add(EzraConstants.IS_EDITING_NAV_PARAM, false);
+                    NavigationService.NavigateAsync(EzraConstants.REPORT_EDITION_PAGE, navigationParams);
                 }
             }
         }
