@@ -20,7 +20,7 @@ namespace Ezra.Data
             return (from r in GetDatabase().Table<ReportItem>()
                  where
                      r.Month == month && r.Year == year
-                 orderby r.Day, r.Id descending
+                 orderby r.Day descending, r.Id descending
                  select r).ToList();
         }
 
