@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="50278betolinck.RelatriodeCampo" Publisher="CN=735221DB-00FD-4396-AE42-571715287F5A" Version="0.2.4.0" />
+  <Identity Name="50278betolinck.RelatriodeCampo" Publisher="CN=735221DB-00FD-4396-AE42-571715287F5A" Version="0.2.5.0" />
   <mp:PhoneIdentity PhoneProductId="10524fa0-8041-4d49-afe8-5741cbdab6d8" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Relatório de Campo</DisplayName>
