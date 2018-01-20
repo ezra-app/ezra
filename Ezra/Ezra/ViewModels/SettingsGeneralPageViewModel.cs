@@ -2,6 +2,7 @@
 using Ezra.Models;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace Ezra.ViewModels
         public SettingsDatabase SettingsDatabase { get; set; }
         public ICommand SaveCommand { get; set; }
 
-        public SettingsGeneralPageViewModel()
+        public SettingsGeneralPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             SaveCommand = new DelegateCommand(SaveCommandExecute);
             SettingsDatabase = new SettingsDatabase();
