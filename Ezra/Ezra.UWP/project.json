@@ -1,7 +1,6 @@
 ﻿{
   "dependencies": {
     "Acr.UserDialogs": "6.4.1",
-    "CommonServiceLocator": "2.0.2",
     "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.6",
     "Newtonsoft.Json": "10.0.3",
     "PCLStorage": "1.0.2",
