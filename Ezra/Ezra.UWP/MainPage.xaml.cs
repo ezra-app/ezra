@@ -13,7 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Prism.Unity;
-using Microsoft.Practices.Unity;
+using Prism;
+using Prism.Ioc;
 
 namespace Ezra.UWP
 {
@@ -29,9 +30,9 @@ namespace Ezra.UWP
 
     public class UwpInitializer : IPlatformInitializer
     {
-        public void RegisterTypes(IUnityContainer container)
+        public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            throw new NotImplementedException();
         }
     }
 

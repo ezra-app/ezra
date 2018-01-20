@@ -4,6 +4,8 @@ using Xamarin.Forms;
 using Ezra.Data;
 using Ezra.ViewModels;
 using Acr.UserDialogs;
+using Prism;
+using Prism.Ioc;
 
 namespace Ezra
 {
@@ -22,19 +24,19 @@ namespace Ezra
 
         }
 
-        protected override void RegisterTypes()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            Container.RegisterTypeForNavigation<NavigationPage>();
-            Container.RegisterTypeForNavigation<MainPage, MainPageViewModel>();
-            Container.RegisterTypeForNavigation<EzraNavigationPage>();
-            Container.RegisterTypeForNavigation<MainMasterDetailPage>();
-            Container.RegisterTypeForNavigation<ReportEditionPage, ReportEditionPageViewModel>();
-            Container.RegisterTypeForNavigation<ReportListPage, ReportListPageViewModel>();
-            Container.RegisterTypeForNavigation<SettingsPage, SettingsPageViewModel>();
-            Container.RegisterTypeForNavigation<AboutPage, AboutPageViewModel>();
-            Container.RegisterTypeForNavigation<BackupPage, BackupPageViewModel>();
-            Container.RegisterTypeForNavigation<StatisticsPage>();
-            Container.RegisterTypeForNavigation<SettingsGeneralPage>();
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<EzraNavigationPage>();
+            containerRegistry.RegisterForNavigation<MainMasterDetailPage>();
+            containerRegistry.RegisterForNavigation<ReportEditionPage, ReportEditionPageViewModel>();
+            containerRegistry.RegisterForNavigation<ReportListPage, ReportListPageViewModel>();
+            containerRegistry.RegisterForNavigation<SettingsPage, SettingsPageViewModel>();
+            containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
+            containerRegistry.RegisterForNavigation<BackupPage, BackupPageViewModel>();
+            containerRegistry.RegisterForNavigation<StatisticsPage>();
+            containerRegistry.RegisterForNavigation<SettingsGeneralPage>();
         }
 
         public static EzraDatabaseManager DatabaseManager

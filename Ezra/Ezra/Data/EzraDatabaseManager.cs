@@ -1,5 +1,4 @@
 ﻿using Ezra.Models;
-using SQLite;
 using SQLite.Net;
 using System;
 using System.Collections.Generic;
