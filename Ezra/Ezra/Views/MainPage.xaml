@@ -9,10 +9,10 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}" Order="Primary" Priority="0"/>
+        <ToolbarItem Text="Adcionar" Icon="add.png" Command="{Binding AddCommand}" Order="Primary" Priority="2"/>
         <ToolbarItem Text="Iniciar" Icon="{Binding CounterIconName}" Command="{Binding StartCounterCommand}" Order="Primary" Priority="1"/>
         <!--<ToolbarItem Text="Data" Icon="calendar.png" Clicked="OnDatePickerClicked" Order="Primary" Priority="2"/> -->
-        <ToolbarItem Text="Configurações" Icon="settings.png" Command="{Binding SettingsCommand}" Priority="2"/>
+        <ToolbarItem Text="Configurações" Icon="settings.png" Command="{Binding SettingsCommand}" Priority="0"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
