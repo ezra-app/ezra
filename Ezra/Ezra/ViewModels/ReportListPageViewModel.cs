@@ -28,6 +28,7 @@ namespace Ezra.ViewModels
             set
             {
                 SetProperty(ref dateControl, value);
+                FormatTitle();
                 Load();
             }
         }
