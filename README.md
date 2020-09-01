@@ -15,3 +15,6 @@
 
 ## Windows Store
 https://www.microsoft.com/store/apps/9p6hxmq1xx6f
+
+## Android
+https://github.com/ezra-app/ezra/releases/download/v0.1.0/Ezra.Droid.apk
